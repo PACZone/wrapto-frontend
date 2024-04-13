@@ -22,21 +22,22 @@ html.lenis body {
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
 }
+
 @layer base {
   * {
     @apply border-secondary;
   }
 
   :root {
-    --primary: #FF4800;
-    --secondary: #1D1D1D;
-    --background: #E2DDD6;
+    --primary: #FFFFFF;
+    --secondary: #3AE27D;
+    --background: #0C0E0E;
     font-family: "Neue Machina", system-ui,
       sans-serif;
     color-scheme: light dark;
-    color: var(--secondary);
+    color: var(--primary);
     background-color: var(--background);
-    background-image: url("/Noisy-Background.svg");
+    background-image: url("../src/assets/noisy-bg.svg");
     background-size: cover;
     background-position: center;
     font-synthesis: none;
