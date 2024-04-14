@@ -185,7 +185,8 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
     ref
   ) => {
     const [localValue, setLocalValue] = React.useState(props.value);
-    const customOnchange = (e: any) => onChange && onChange(e);
+    const customOnchange = (e: React.ChangeEvent<HTMLInputElement>) =>
+      onChange && onChange(e);
     // const inputRef = ref || React.useRef<HTMLInputElement>(null!);
     React.useEffect(() => {
       setLocalValue(props.value);
@@ -306,7 +307,7 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
                           target: {
                             value: "",
                           },
-                        });
+                        } as React.ChangeEvent<HTMLInputElement>);
                       }}
                     >
                       <CloseIcon className="text-current stroke-current fill-current" />

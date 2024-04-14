@@ -1,7 +1,7 @@
 import { ScrollDown } from "assets/icons";
 import Reveal from "../../HOC/Reveal";
 import { Link } from "react-scroll";
-import  './style.css'
+import "./style.css";
 
 export default function HeroSection() {
   return (
@@ -20,11 +20,7 @@ export default function HeroSection() {
         <ScrollDown />
       </Link>
 
-      <img
-        className="absolute -z-10 -top-10 spin"
-        src="/ring.svg"
-        alt="Ring"
-      />
+      <img className="absolute -z-10 -top-10 spin" src="/ring.svg" alt="Ring" />
     </div>
   );
 }
