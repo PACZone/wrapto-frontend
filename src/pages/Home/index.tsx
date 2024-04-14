@@ -3,13 +3,13 @@ import HeroSection from "../../components/Home/HeroSection";
 import data from "./data.json";
 
 export default function Home() {
-  //   console.log(transferBoxes);
+    //   console.log(transferBoxes);
 
-  return (
-    <main className="container mx-auto">
-      <HeroSection />
-      <TransferBox title="Transfer From" selectItems={data.pactus} />
-      <TransferBox title="Transfer To" selectItems={data.companies} />
-    </main>
-  );
+    return (
+        <main className="container mx-auto">
+            <HeroSection />
+            <TransferBox title="Transfer From" selectItems={data.pactus} />
+            <TransferBox title="Transfer To" selectItems={data.companies} />
+        </main>
+    );
 }
