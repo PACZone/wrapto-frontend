@@ -37,11 +37,14 @@ export default {
       colors: {
         primary: "var(--primary)",
         secondary: "var(--secondary)",
-        background: "var(--background)"
+        background: "var(--background)",
+        gray: {
+          normal: "var(--gray-normal)"
+        }
       }
     },
     fontFamily: {
-      Neue: 'Neue Machina'
+      Neue: 'Aeonik Fono TRIAL'
     },
     screens: {
       'sm': '0px',
