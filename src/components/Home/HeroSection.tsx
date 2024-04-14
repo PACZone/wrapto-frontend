@@ -1,6 +1,7 @@
 import { ScrollDown } from "assets/icons";
 import Reveal from "../../HOC/Reveal";
 import { Link } from "react-scroll";
+import  './style.css'
 
 export default function HeroSection() {
   return (
@@ -9,7 +10,7 @@ export default function HeroSection() {
         <h1 className="heading-1">Bridge your PAC coin to any other Chain</h1>
       </Reveal>
       <Link
-      className="cursor-pointer"
+        className="cursor-pointer"
         to="transfer-box"
         spy={true}
         smooth={true}
@@ -20,7 +21,7 @@ export default function HeroSection() {
       </Link>
 
       <img
-        className="absolute -z-10 -top-10 "
+        className="absolute -z-10 -top-10 spin"
         src="/src/assets/svg/ring.svg"
         alt="Ring"
       />
