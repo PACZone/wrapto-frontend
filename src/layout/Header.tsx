@@ -26,6 +26,7 @@ export function Header() {
         >
           Recent transactions
         </Link>
+
       </nav>
     </header>
   );

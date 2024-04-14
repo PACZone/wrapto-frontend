@@ -39,7 +39,10 @@ export default {
         secondary: "var(--secondary)",
         background: "var(--background)",
         gray: {
-          normal: "var(--gray-normal)"
+          normal: "var(--gray-normal)",
+          100: "var(--gray-100)",
+          400: "var(--gray-400)",
+          900: "var(--gray-900)"
         }
       }
     },

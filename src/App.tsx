@@ -25,7 +25,6 @@ export default function App() {
           <Routes>
             {Object.keys(routes).map((route, index) => {
               const routeKey = route as keyof typeof routes;
-              console.log(routeKey);
               return (
                 <Route
                   key={index}

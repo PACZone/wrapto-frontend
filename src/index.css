@@ -38,6 +38,9 @@ html.lenis body {
     --secondary: #3AE27D;
     --background: #0C0E0E;
     --gray-normal: #1D1D1D;
+    --gray-100: #BEC7CA;
+    --gray-400: #627077;
+    --gray-900: #181B1D;
 
     font-family: "Aeonik Fono TRIAL",
       system-ui,

@@ -1,0 +1,15 @@
+{
+    "pactus":[{
+        "title": "Pactus",
+        "icon": "/companies/pactus.svg"
+    }],
+    "companies": [{
+            "title": "Polygon Network",
+            "icon": "/companies/polygon.svg"
+        },
+        {
+            "title": "Pactus",
+            "icon": "/companies/pactus.svg"
+        }
+    ]
+}
