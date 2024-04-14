@@ -22,7 +22,7 @@ export default function HeroSection() {
 
       <img
         className="absolute -z-10 -top-10 spin"
-        src="/src/assets/svg/ring.svg"
+        src="/ring.svg"
         alt="Ring"
       />
     </div>
