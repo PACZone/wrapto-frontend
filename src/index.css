@@ -6,164 +6,158 @@
 
 html.lenis,
 html.lenis body {
-  height: auto;
+    height: auto;
 }
 
 .lenis.lenis-smooth {
-  scroll-behavior: auto !important;
+    scroll-behavior: auto !important;
 }
 
 .lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
+    overscroll-behavior: contain;
 }
 
 .lenis.lenis-stopped {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .lenis.lenis-scrolling iframe {
-  pointer-events: none;
+    pointer-events: none;
 }
 
 @layer base {
-  * {
-    @apply border-secondary;
-  }
+    * {
+        @apply border-secondary;
+    }
 
-  :root {
+    :root {
+        /* colors */
 
-    /* colors */
+        --primary: #ffffff;
+        --secondary: #3ae27d;
+        --background: #0c0e0e;
+        --gray-normal: #1d1d1d;
+        --gray-100: #bec7ca;
+        --gray-400: #627077;
+        --gray-900: #181b1d;
 
-    --primary: #FFFFFF;
-    --secondary: #3AE27D;
-    --background: #0C0E0E;
-    --gray-normal: #1D1D1D;
-    --gray-100: #BEC7CA;
-    --gray-400: #627077;
-    --gray-900: #181B1D;
+        font-family: "Aeonik Fono TRIAL", system-ui, sans-serif;
+        color-scheme: light dark;
+        color: var(--primary);
+        background-color: var(--background);
+        background-image: url("../src/assets/svg/noisy-bg.svg");
+        background-size: cover;
+        background-position: center;
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
 
-    font-family: "Aeonik Fono TRIAL",
-      system-ui,
-      sans-serif;
-    color-scheme: light dark;
-    color: var(--primary);
-    background-color: var(--background);
-    background-image: url("../src/assets/svg/noisy-bg.svg");
-    background-size: cover;
-    background-position: center;
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+        /* spacing */
 
+        --sp0: 0;
+        --sp1: 0.25rem;
+        --sp2: 0.5rem;
+        --sp3: 10px;
+        --sp4: 12px;
+        --sp5: 16px;
+        --sp6: 20px;
+        --sp7: 24px;
+        --sp8: 2rem;
+        --s9: 40px;
+        --s10: 48px;
+        --s11: 64px;
+        --s12: 80px;
+        --sp13: 96px;
+        --sp14: 128px;
+        --sp15: 160px;
+        --sp16: 192px;
+        --sp17: 224px;
+        --sp18: 256px;
+    }
 
-    /* spacing */
-
-    --sp0: 0;
-    --sp1: 0.25rem;
-    --sp2: 0.5rem;
-    --sp3: 10px;
-    --sp4: 12px;
-    --sp5: 16px;
-    --sp6: 20px;
-    --sp7: 24px;
-    --sp8: 2rem;
-    --s9: 40px;
-    --s10: 48px;
-    --s11: 64px;
-    --s12: 80px;
-    --sp13: 96px;
-    --sp14: 128px;
-    --sp15: 160px;
-    --sp16: 192px;
-    --sp17: 224px;
-    --sp18: 256px;
-
-  }
-
-
-  a {
-    @apply no-underline;
-  }
+    a {
+        @apply no-underline;
+    }
 }
 
 /* Typography */
 
 @layer base {
-  .title-1 {
-    @apply text-[10.25rem] leading-[190px] -tracking-[2px]
-    /*  font-size: 96px */
-  }
+    .title-1 {
+        @apply text-[10.25rem] leading-[190px] -tracking-[2px]
+    /*  font-size: 96px */;
+    }
 
-  .title-1 {
-    @apply text-[7.75rem] leading-[160px] -tracking-[2px]
-    /*  font-size: 124px */
-  }
+    .title-1 {
+        @apply text-[7.75rem] leading-[160px] -tracking-[2px]
+    /*  font-size: 124px */;
+    }
 
-  .heading-1 {
-    @apply text-[6rem] leading-[130px] -tracking-[2px]
-    /*  font-size: 96px */
-  }
+    .heading-1 {
+        @apply text-[6rem] leading-[130px] -tracking-[2px]
+    /*  font-size: 96px */;
+    }
 
-  .heading-2 {
-    @apply text-[4rem] leading-[63px] -tracking-wider
-    /*  font-size: 64px */
-  }
+    .heading-2 {
+        @apply text-[4rem] leading-[63px] -tracking-wider
+    /*  font-size: 64px */;
+    }
 
-  .heading-3 {
-    @apply text-[3.5rem] leading-[61px] -tracking-wider
-    /*  font-size: 56px */
-  }
+    .heading-3 {
+        @apply text-[3.5rem] leading-[61px] -tracking-wider
+    /*  font-size: 56px */;
+    }
 
-  .heading-4 {
-    @apply text-[3rem] leading-[49px] -tracking-wider
-    /*  font-size: 48px */
-  }
+    .heading-4 {
+        @apply text-[3rem] leading-[49px] -tracking-wider
+    /*  font-size: 48px */;
+    }
 
-  .heading-5 {
-    @apply text-[2.5rem] leading-[44px] -tracking-wider
-    /*  font-size: 40px */
-  }
+    .heading-5 {
+        @apply text-[2.5rem] leading-[44px] -tracking-wider
+    /*  font-size: 40px */;
+    }
 
-  .heading-6 {
-    @apply text-[2rem] leading-[45px] -tracking-wider
-    /*  font-size: 40px */
-  }
+    .heading-6 {
+        @apply text-[2rem] leading-[45px] -tracking-wider
+    /*  font-size: 40px */;
+    }
 
-  .title-1 {
-    @apply text-[1.5rem] leading-[26px] -tracking-wider
-    /*  font-size: 24px */
-  }
+    .title-1 {
+        @apply text-[1.5rem] leading-[26px] -tracking-wider
+    /*  font-size: 24px */;
+    }
 
-  .title-2 {
-    @apply text-[1.25rem] leading-[26px] -tracking-wider
-    /*  font-size: 20px */
-  }
+    .title-2 {
+        @apply text-[1.25rem] leading-[26px] -tracking-wider
+    /*  font-size: 20px */;
+    }
 
-  .body-1 {
-    @apply text-[1rem] leading-[20px] -tracking-wider
-    /*  font-size: 16px */
-  }
+    .body-1 {
+        @apply text-[1rem] leading-[20px] -tracking-wider
+    /*  font-size: 16px */;
+    }
 
-  .body-2 {
-    @apply text-[0.875rem] -tracking-wider
-    /*  font-size: 14px */
-  }
+    .body-2 {
+        @apply text-[0.875rem] -tracking-wider
+    /*  font-size: 14px */;
+    }
 
-  .caption-1 {
-    @apply text-[0.75rem] -tracking-wider
-    /*  font-size: 14px */
-  }
+    .caption-1 {
+        @apply text-[0.75rem] -tracking-wider
+    /*  font-size: 14px */;
+    }
 
-  h1 {
-    @apply heading-1;
-  }
+    h1 {
+        @apply heading-1;
+    }
 
-  h2 {
-    @apply heading-2;
-  }
+    h2 {
+        @apply heading-2;
+    }
 
-  h3 {
-    @apply heading-3;
-  }
+    h3 {
+        @apply heading-3;
+    }
 }
