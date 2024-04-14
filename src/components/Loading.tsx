@@ -7,7 +7,7 @@ export default function Loading() {
     const handleLoadingTime = () => {
       setTimeout(() => {
         setLoading(false);
-      }, 3000);
+      }, 2700);
     };
 
     handleLoadingTime();

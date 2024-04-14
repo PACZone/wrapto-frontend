@@ -1,0 +1,27 @@
+/* -- Light -- */
+@font-face {
+    font-family: "Aeonik Fono TRIAL";
+    src: url("/fonts/AeonikFonoTRIAL-Light.otf"),
+        url("/fonts/AeonikFonoTRIAL-Light.otf") format("otf");
+
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* -- Normal -- */
+@font-face {
+    font-family: "Aeonik Fono TRIAL";
+    src: url("/fonts/AeonikFonoTRIAL-Regular.otf"),
+        url("/fonts/AeonikFonoTRIAL-Regular.otf") format("otf");
+
+    font-weight: 400;
+    font-style: normal;
+}
+/* -- Extra bold -- */
+@font-face {
+    font-family: "Aeonik Fono TRIAL";
+    src: url("/fonts/AeonikFonoTRIAL-Bold.otf"),
+        url("/fonts/AeonikFonoTRIAL-Bold.otf") format("otf");
+    font-weight: 700;
+    font-style: normal;
+}
