@@ -11,7 +11,7 @@ export default function HeroSection() {
                     Bridge your{" "}
                     <span className="text-secondary border rounded-full border-secondary px-sp8 bg-[#24292BB8] bg-opacity-[72%]">
                         {" "}
-                        PAC{" "}
+                        PAC
                     </span>{" "}
                     coin to any other Chain
                 </h1>
