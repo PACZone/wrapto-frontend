@@ -54,7 +54,7 @@ html.lenis body {
         color: var(--primary);
         background-color: var(--background);
         background-image: url("../src/assets/svg/noisy-bg.svg");
-        background-size: cover;
+        /* background-size: cover; */
         background-position: center;
         font-synthesis: none;
         text-rendering: optimizeLegibility;
