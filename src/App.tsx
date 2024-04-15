@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import Loading from "./components/Loading";
 import { Header } from "./layout/Header";
 import { useEffect, useState } from "react";
+import Footer from "layout/Footer";
 
 export default function App() {
     const [loading, setLoading] = useState(true);
@@ -34,6 +35,7 @@ export default function App() {
                             );
                         })}
                     </Routes>
+                    <Footer />
                 </>
             )}
         </ReactLenis>

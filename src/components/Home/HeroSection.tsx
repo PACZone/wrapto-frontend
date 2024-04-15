@@ -8,7 +8,12 @@ export default function HeroSection() {
         <div className="py-[145px] relative flex-col flex justify-center items-center max-w-[1198px] mx-auto text-center mt-[152px] mb-[218px] gap-sp10">
             <Reveal>
                 <h1 className="heading-1">
-                    Bridge your PAC coin to any other Chain
+                    Bridge your{" "}
+                    <span className="text-secondary border rounded-full border-secondary px-sp8 bg-[#24292BB8] bg-opacity-[72%]">
+                        {" "}
+                        PAC{" "}
+                    </span>{" "}
+                    coin to any other Chain
                 </h1>
             </Reveal>
             <Link
@@ -19,7 +24,7 @@ export default function HeroSection() {
                 offset={50}
                 duration={3000}
             >
-                <ScrollDown />
+                <ScrollDown className="animate-bounce" />
             </Link>
 
             <img

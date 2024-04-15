@@ -1,10 +1,11 @@
 .spin {
-    animation: spin 120s linear infinite;
+
+    animation: ring-spin 120s linear infinite;
     transform: translateX(-50%);
     transform: translateY(-50%);
 }
 
-@keyframes spin {
+@keyframes ring-spin {
     from {
         transform: rotate(0deg);
     }
