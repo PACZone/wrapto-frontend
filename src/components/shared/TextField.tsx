@@ -131,7 +131,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import clsx from "clsx";
 
 import { IconButton } from "./IconButton";
-import { CloseIcon, InfoCircle } from "assets/icons";
+import { CloseIcon } from "assets/icons";
 
 const TextFieldVariants = cva(
     "rounded-xl bg-transparent  body-1 font-normal  flex gap-sp2  items-center px-sp5 appearance-none group-focus:ring-gray-700 group-hover:ring-gray-700  text-absolute-white  group-hover:[&>input]:placeholder:text-absolute-white [&>input]:text-absolute-white  [&>input]:placeholder:text-gray-400  body-1 leading-[24px] outline-none   ring-[1.5px] ring-gray-900  focus-visible:ring-primary-500 hover:ring-gray-700  !focus:ring-primary-500  [&>svg]:stroke-primary-500 [&>svg]:fill-primary-500 disabled:placeholder:gray-300 disabled:text-gray-300 disabled:ring-gray-300 m-0 mt-0 transition-all",
@@ -156,6 +156,7 @@ export interface TextFieldProps
     labelClasses?: string;
     inputClasses?: string;
     parentClasses?: string;
+    leadingClasses?: string;
 }
 
 const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
@@ -164,10 +165,10 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
             parentClasses,
             inputClasses,
             labelClasses,
+            leadingClasses,
             leading,
             fieldOnTop,
             status,
-            password,
             disabled,
             helperText,
             leftIcon,
@@ -194,25 +195,12 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
 
         // React.useImperativeHandle(ref, () => inputRef.current, []);
         const [isFocused, setIsFocused] = React.useState<boolean>(false);
-        const helperTextClasses = clsx("flex gap-sp1 items-center", {
-            " text-gray-300 [&>span>svg]:fill-gray-300": disabled,
-            " text-additional-error  [&>span>svg]:fill-additional-error":
-                !disabled && status === "error",
-            " text-additional-success  [&>span>svg]:fill-additional-success":
-                !disabled && status === "success",
-            " text-gray-300  [&>span>svg]:fill-gray-700":
-                !disabled && status === "contained",
-            "text-gray-700 [&>span>svg]:fill-gray-500":
-                !disabled && status === "default",
-            " text-primary-500 [&>span>svg]:fill-primary-500 ":
-                !disabled && (!status || status === "default") && isFocused,
-            " text-gray-700 [&>span>svg]:fill-gray-500": !status && !disabled,
-        });
+        const helperTextClasses = clsx("caption font-bold text-gray-400");
         return (
             <div className={` group space-y-sp2  ${parentClasses || ""}`}>
                 {label && (
                     <label
-                        className={`block text-absolute-white text-start body-1 font-normal  
+                        className={`block text-white text-start body-2 h-sp7 font-normal  
               ${labelClasses || ""}`}
                         htmlFor={id || `input-wrapto-${label}`}
                     >
@@ -235,6 +223,7 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
                                     "ring-gray-300 focus-visible:ring-gray-300  focus:ring-gray-300":
                                         !disabled && status === "contained",
                                 },
+                                leadingClasses,
                             )}
                         >
                             {leading}
@@ -258,16 +247,7 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
                         )}
                     >
                         {leftIcon && !leading && (
-                            <span
-                                className={`flex items-center ${
-                                    isFocused && !disabled
-                                        ? "text-gray-700"
-                                        : !disabled
-                                          ? "text-gray-500"
-                                          : "text-gray-300"
-                                }
-               `}
-                            >
+                            <span className={`flex items-center text-gray-400`}>
                                 {leftIcon}
                             </span>
                         )}
@@ -338,11 +318,6 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
 
                 {helperText && type !== "search" && (
                     <div className={helperTextClasses}>
-                        {!password && type !== "password" && (
-                            <span>
-                                <InfoCircle className="size-sp7" />
-                            </span>
-                        )}
                         {helperText}
                     </div>
                 )}
