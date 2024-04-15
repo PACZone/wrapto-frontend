@@ -2,7 +2,7 @@ import { Button } from "components/shared/Button";
 import TransferBox from "../TransferBox";
 import data from "../data.json";
 import { useState } from "react";
-import { formatNumber } from "lib/utils";
+import { cn, formatNumber } from "lib/utils";
 import { ArrowsUpDown } from "assets/icons";
 import { motion } from "framer-motion";
 
@@ -31,7 +31,7 @@ export default function TransferSection() {
     };
 
     return (
-        <section className="space-y-sp9">
+        <section className="space-y-sp9 max-w-[884px] mx-auto">
             <div className="space-y-sp5">
                 <div className="space-y-sp7">
                     <motion.div
@@ -83,11 +83,27 @@ export default function TransferSection() {
                         />
                     </motion.div>
                 </div>
-                <p className="body-2 text-white">
+                <p
+                    className={cn(
+                        "body-2 text-white transition-all duration-300",
+                        {
+                            "translate-y-10 ": toggle,
+                        },
+                    )}
+                >
                     Polygon gas fee ~ 0.0017 ETH <br /> Bridge fee = 1 PAC
                 </p>
             </div>
-            <Button variant="secondary" size="lg" className="w-full">
+            <Button
+                variant="secondary"
+                size="lg"
+                className={cn(
+                    "w-full  transition-all duration-300",
+                    {
+                        "translate-y-4 ": toggle,
+                    },
+                )}
+            >
                 Generate Memo Transaction
             </Button>
         </section>
