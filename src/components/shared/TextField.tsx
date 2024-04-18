@@ -1,133 +1,6 @@
-// "use client";
-// import { cn } from "lib/utils";
-// import React, { forwardRef } from "react";
-
-// import { motion } from "framer-motion";
-// import { CloseIcon, InfoCircle } from "assets/icons";
-
-// type TextFieldProps = React.InputHTMLAttributes<HTMLInputElement> & {
-//   rightIcon?: React.ReactNode;
-//   leftIcon?: React.ReactNode;
-//   status?: "error";
-//   helperText?: string;
-//   label?:string;
-// };
-
-// const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
-//   (
-//     {
-//       label,
-//       className,
-//       rightIcon,
-//       leftIcon,
-//       onBlur,
-//       status,
-//       helperText,
-//       onFocus,
-//       onChange,
-//       ...props
-//     },
-//     ref
-//   ) => {
-//     // const inputRef = useRef<HTMLInputElement>(null);
-//     // const [localValue, setLocalValue] = React.useState<any>(props.value ?? null);
-//     const [localValue, setLocalValue] = React.useState(props.value);
-//     const [isFocused, setIsFocused] = React.useState<boolean>(false);
-//     // const customOnchange = (e: any) => onChange && onChange(e);
-//     const internalOnChange = (e: any) => onChange && onChange(e);
-//     React.useEffect(() => {
-//       setLocalValue(props.value);
-//     }, [props.value]);
-//     // console.log(localValue);
-//     return (
-//       <div className="space-y-sp2">
-//         <label className="body-2 text-gray-100" htmlFor={props.name}>{label}</label>
-//         <div
-//           className={cn(
-//             `group  flex w-full bg-transparent px-sp4 border-b-[1.5px] border-gray-600
-//       ${
-//         isFocused
-//           ? "after:w-full after:left-0 [&>input]:placeholder:text-absolute-white"
-//           : "after:-left-20 after:w-0 hover:after:left-0 hover:after:w-[10%] [&>input]:placeholder:text-gray-200"
-//       }
-//     relative z-[2] duration-300 transition-all  after:h-[1.5px] after:transition-all after:duration-300
-//       after:content-[' '] after:block after:absolute after:z-[-1] after:bottom-0 group-focus:after:left-0  `,
-//             {
-//               " after:bg-additional-error": status === "error",
-//               " after:bg-primary-500": !status,
-//             }
-//           )}
-//         >
-//           {leftIcon && <div>{leftIcon}</div>}
-
-//           <input
-//             ref={ref}
-//             className={cn(
-//               "text-absolute-white w-full bg-transparent  py-sp5  title-2 ring-0 outline-none",
-//               { className }
-//             )}
-//             onBlur={(e) => {
-//               setIsFocused(false);
-//               onBlur && onBlur(e);
-//             }}
-//             onFocus={(e) => {
-//               setIsFocused(true);
-//               onFocus && onFocus(e);
-//             }}
-//             value={localValue}
-//             onChange={(e) => {
-//               setLocalValue(e.target.value);
-//               internalOnChange(e);
-//             }}
-//             {...props}
-//           />
-//           {localValue && (
-//             <button
-//               className="focus-within:ring-0 outline-none"
-//               onClick={() => {
-//                 // inputRef.current?.focus();
-//                 setLocalValue("");
-//                 internalOnChange({
-//                   target: {
-//                     value: "",
-//                   },
-//                 });
-//               }}
-//             >
-//               <CloseIcon />
-//             </button>
-//           )}
-//           {rightIcon && <div>{rightIcon}</div>}
-//         </div>
-//         {helperText && (
-//           <motion.p
-//             initial={{ opacity: 0, y: -20 }}
-//             animate={{ opacity: 1, y: 0 }}
-//             exit={{ opacity: 0, y: -20 }}
-//             transition={{ duration: 0.3 }}
-//             className={cn("body-1 flex gap-sp1", {
-//               "text-additional-error": status === "error",
-//               "text-gray-950": !status,
-//             })}
-//           >
-//             <span>
-//               <InfoCircle />
-//             </span>
-//             {helperText}
-//           </motion.p>
-//         )}
-//       </div>
-//     );
-//   }
-// );
-// TextField.displayName = "TextField";
-
-// export default TextField;
-
 import * as React from "react";
 import { cn } from "lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
-// import { InfoCircle } from "../assets/icons/InfoCircle";
 import clsx from "clsx";
 
 import { IconButton } from "./IconButton";
@@ -188,19 +61,17 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
         const [localValue, setLocalValue] = React.useState(props.value);
         const customOnchange = (e: React.ChangeEvent<HTMLInputElement>) =>
             onChange && onChange(e);
-        // const inputRef = ref || React.useRef<HTMLInputElement>(null!);
         React.useEffect(() => {
             setLocalValue(props.value);
         }, [props.value]);
 
-        // React.useImperativeHandle(ref, () => inputRef.current, []);
         const [isFocused, setIsFocused] = React.useState<boolean>(false);
         const helperTextClasses = clsx("caption font-bold text-gray-400");
         return (
             <div className={` group space-y-sp2  ${parentClasses || ""}`}>
                 {label && (
                     <label
-                        className={`block text-white text-start body-2 h-sp7 font-normal  
+                        className={`block text-white text-start body-2 h-sp7 font-light
               ${labelClasses || ""}`}
                         htmlFor={id || `input-wrapto-${label}`}
                     >
@@ -263,7 +134,7 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
                             }}
                             disabled={disabled}
                             id={id || `input-wrapto-${label}`}
-                            className={`py-sp6  disabled:text-gray-300 text-absolute-white autofill:text-absolute-white appearance-none ring-0 outline-none ring-none bg-background  w-full focus:placeholder:text-gray-400
+                            className={`py-sp4 h-sp10 disabled:text-gray-300 text-absolute-white autofill:text-absolute-white appearance-none ring-0 outline-none ring-none bg-background  w-full focus:placeholder:text-gray-400
                 ${inputClasses || ""}`}
                             type={type}
                             ref={ref}
@@ -317,9 +188,7 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
                 </div>
 
                 {helperText && type !== "search" && (
-                    <div className={helperTextClasses}>
-                        {helperText}
-                    </div>
+                    <div className={helperTextClasses}>{helperText}</div>
                 )}
             </div>
         );
