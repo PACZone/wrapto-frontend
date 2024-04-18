@@ -75,7 +75,7 @@ export default function TransferSection() {
                             }
                             title="Transfer To"
                             selectItems={toggle ? data.companies : data.pactus}
-                            label="Destination address in Pactus network"
+                            label={`Destination address in ${!toggle ? "Polygon" : "Pactus"} network`}
                             placeholder="EX: pc1zzzvlcqge523yg8re8hgnk72jsfdatncusmf6uy"
                         />
                     </div>
