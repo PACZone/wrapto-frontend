@@ -93,79 +93,79 @@ html.lenis body {
 
 @layer base {
     .title-1 {
-        @apply text-[10.25rem] leading-[190px] -tracking-[2px]
+        @apply text-[10.25rem] leading-[190px] tracking-wider
         /*  font-size: 96px */
         ;
     }
 
     .title-1 {
-        @apply text-[7.75rem] leading-[160px] -tracking-[2px]
+        @apply text-[7.75rem] leading-[160px] tracking-wider
         /*  font-size: 124px */
         ;
     }
 
     .heading-1 {
-        @apply text-[6rem] leading-[130px] -tracking-[2px]
+        @apply text-[6rem] leading-[130px] tracking-wider
         /*  font-size: 96px */
         ;
     }
 
     .heading-2 {
-        @apply text-[4rem] leading-[63px] -tracking-wider
+        @apply text-[4rem] leading-[63px] tracking-wider
         /*  font-size: 64px */
         ;
     }
 
     .heading-3 {
-        @apply text-[3.5rem] leading-[61px] -tracking-wider
+        @apply text-[3.5rem] leading-[61px] tracking-wider
         /*  font-size: 56px */
         ;
     }
 
     .heading-4 {
-        @apply text-[3rem] leading-[49px] -tracking-wider
+        @apply text-[3rem] leading-[49px] tracking-wider
         /*  font-size: 48px */
         ;
     }
 
     .heading-5 {
-        @apply text-[2.5rem] leading-[44px] -tracking-wider
+        @apply text-[2.5rem] leading-[44px] tracking-wider
         /*  font-size: 40px */
         ;
     }
 
     .heading-6 {
-        @apply text-[2rem] leading-[45px] -tracking-wider
+        @apply text-[2rem] leading-[45px] tracking-wider
         /*  font-size: 40px */
         ;
     }
 
     .title-1 {
-        @apply text-[1.5rem] leading-[26px] -tracking-wider
+        @apply text-[1.5rem] leading-[26px] tracking-wider
         /*  font-size: 24px */
         ;
     }
 
     .title-2 {
-        @apply text-[1.25rem] leading-[26px] -tracking-wider
+        @apply text-[1.25rem] leading-[26px] tracking-wider
         /*  font-size: 20px */
         ;
     }
 
     .body-1 {
-        @apply text-[1rem] leading-[20px] -tracking-wider
+        @apply text-[1rem] leading-[20px] tracking-wider
         /*  font-size: 16px */
         ;
     }
 
     .body-2 {
-        @apply text-[0.875rem] -tracking-wider
+        @apply text-[0.875rem] tracking-wider
         /*  font-size: 14px */
         ;
     }
 
     .caption-1 {
-        @apply text-[0.75rem] -tracking-wider
+        @apply text-[0.75rem] tracking-wider
         /*  font-size: 14px */
         ;
     }

@@ -5,7 +5,7 @@ import Logo from "assets/svg/logo.svg";
 
 export function Header() {
     return (
-        <header className="container mx-auto px-10  border-b border-gray-normal py-sp6">
+        <header className="container mx-auto px-10  border-b border-gray-normal py-sp6 font-light">
             <nav className="flex justify-between items-center">
                 <CustomLink draggable={false} to="/">
                     <img src={Logo} alt="Logo" className="text-primary" />
