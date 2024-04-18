@@ -4,6 +4,8 @@ import data from "../data.json";
 import { useState } from "react";
 import { cn, formatNumber } from "lib/utils";
 import { ArrowsUpDown } from "assets/icons";
+import { ConnectButton } from "components/shared/ConnectButton";
+// import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 export default function TransferSection() {
     const [transferTo, setTransferTo] = useState<string>("");
@@ -88,16 +90,18 @@ export default function TransferSection() {
                     Polygon gas fee ~ 0.0017 ETH <br /> Bridge fee = 1 PAC
                 </p>
             </div>
-            <Button
+            <div
+                className="transition-all animate-duration-[1000ms] animate-fade"
                 key={animationKey + 3}
-                variant="secondary"
-                size="lg"
-                className={cn("w-full  transition-all ")}
             >
-                <span className=" animate-duration-[1000ms] animate-fade">
-                    {!toggle ? "Connect Wallet" : " Generate Memo Transaction"}
-                </span>
-            </Button>
+                {toggle ? (
+                    <Button variant="secondary" size="lg" className="w-full">
+                        Generate Memo Transaction
+                    </Button>
+                ) : (
+                    <ConnectButton />
+                )}
+            </div>
         </section>
     );
 }
