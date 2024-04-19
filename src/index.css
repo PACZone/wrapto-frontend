@@ -93,19 +93,19 @@ html.lenis body {
 
 @layer base {
     .title-1 {
-        @apply text-[10.25rem] leading-[190px] tracking-wider
+        @apply text-[10.25rem] leading-[190px] -tracking-tight
         /*  font-size: 96px */
         ;
     }
 
     .title-1 {
-        @apply text-[7.75rem] leading-[160px] tracking-wider
+        @apply text-[7.75rem] leading-[160px] -tracking-tight
         /*  font-size: 124px */
         ;
     }
 
     .heading-1 {
-        @apply text-[6rem] leading-[130px] tracking-wider
+        @apply text-[6rem] leading-[130px] -tracking-tight
         /*  font-size: 96px */
         ;
     }
