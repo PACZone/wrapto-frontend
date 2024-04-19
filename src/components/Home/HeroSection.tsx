@@ -9,7 +9,7 @@ export default function HeroSection() {
             <Reveal>
                 <h1 className="lg:heading-1 md:heading-4 heading-3">
                     Bridge your{" "}
-                    <span className="text-secondary border rounded-full text-[95px] border-secondary px-sp8 py-sp3 inline-flex items-center h-sp13 bg-[#24292BB8] bg-opacity-[72%]">
+                    <span className="text-secondary border rounded-full border-secondary px-sp8 py-sp3 inline-flex items-center my-2 md:my-0 lg:max-h-sp13 max-h-sp11 bg-[#24292BB8] bg-opacity-[72%]">
                         {" "}
                         PAC
                     </span>{" "}
@@ -17,14 +17,18 @@ export default function HeroSection() {
                 </h1>
             </Reveal>
             <Link
-                className="cursor-pointer"
+                className="cursor-pointer relative"
                 to="transfer-box"
                 spy={true}
                 smooth={true}
                 offset={50}
                 duration={3000}
             >
-                <ScrollDown className="animate-bounce" />
+                <ScrollDown className="text-gray-200" />
+                {/* <div className="absolute left-1/4 border-gray-100 border-2 border-l-0 border-t-0 size-sp4  -bottom-4 rotate-45"></div> */}
+
+                <div className="arrow-scroll-down -bottom-4 "></div>
+                <div className="arrow-scroll-down -bottom-[22px] "></div>
             </Link>
 
             <img

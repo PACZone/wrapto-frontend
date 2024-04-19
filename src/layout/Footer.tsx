@@ -1,4 +1,3 @@
-
 export default function Footer() {
     return (
         <footer className="flex flex-col items-center gap-sp2 py-sp10">
@@ -9,9 +8,14 @@ export default function Footer() {
             </p>
             <p className="flex gap-1 items-center  body-2">
                 <span>Powered by</span>
-                <span className="p-2 rounded-full bg-secondary shadow-primary">
+                <a
+                    href="https://dezh.tech/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-full bg-secondary shadow-primary"
+                >
                     <img src="/companies/dezh.svg" alt="dezh" />
-                </span>
+                </a>
             </p>
         </footer>
     );

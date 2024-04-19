@@ -96,10 +96,10 @@ export default function TransferSection() {
             >
                 {toggle ? (
                     <Button variant="secondary" size="lg" className="w-full">
-                        Generate Memo Transaction
+                        Bridge
                     </Button>
                 ) : (
-                    <ConnectButton />
+                    <ConnectButton variantType="button" size="lg" />
                 )}
             </div>
         </section>
