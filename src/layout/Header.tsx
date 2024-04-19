@@ -2,6 +2,8 @@ import Link from "components/shared/Link";
 import { Link as CustomLink } from "react-router-dom";
 import { links } from "./links";
 import Logo from "assets/svg/logo.svg";
+import { ConnectButton } from "components/shared/ConnectButton";
+import { EllipseIcon } from "assets/icons";
 
 export function Header() {
     return (
@@ -10,7 +12,7 @@ export function Header() {
                 <CustomLink draggable={false} to="/">
                     <img src={Logo} alt="Logo" className="text-primary" />
                 </CustomLink>
-                <ul className="list-disc gap-sp10 md:flex hidden">
+                <ul className=" gap-sp8 md:flex hidden">
                     {links.map((link, key) => (
                         <li key={key}>
                             <Link
@@ -23,13 +25,11 @@ export function Header() {
                         </li>
                     ))}
                 </ul>
-                <Link
-                    to={"/transactions"}
-                    className="body-1 marker:text-secondary hover:border-secondary"
-                    variant="primary"
-                >
-                    Recent transactions
-                </Link>
+                <ConnectButton
+                    variant="secondary"
+                    variantType="link"
+                    leftIcon={<EllipseIcon className="text-secondary" />}
+                />
             </nav>
         </header>
     );

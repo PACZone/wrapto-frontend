@@ -1,6 +1,27 @@
 import { ConnectButton as RainbowConnectButton } from "@rainbow-me/rainbowkit";
-import { Button } from "./Button";
-export const ConnectButton = () => {
+import { buttonVariants } from "./Button";
+import { cn } from "lib/utils";
+import { linkVariants } from "./Link";
+import { ReactNode } from "react";
+
+type ComponentProps<T extends keyof JSX.IntrinsicElements> = {
+    variant?: "secondary" | null | undefined;
+    size?: "default" | "lg" | null | undefined;
+    className?: string;
+    variantType?: "button" | "link";
+    leftIcon ?:ReactNode
+} & Omit<JSX.IntrinsicElements[T], "variant" | "size" | "className">;
+
+export const ConnectButton = <T extends keyof JSX.IntrinsicElements>({
+    variant = "secondary",
+    size,
+    className,
+    variantType,
+    leftIcon,
+}: ComponentProps<T>) => {
+    const styleVariants =
+        variantType === "button" ? buttonVariants : linkVariants;
+
     return (
         <RainbowConnectButton.Custom>
             {({
@@ -33,36 +54,53 @@ export const ConnectButton = () => {
                         {(() => {
                             if (!connected) {
                                 return (
-                                    <Button
-                                        variant="secondary"
-                                        className="w-full"
-                                        size="lg"
+                                    <button
+                                        className={cn(
+                                            "w-full ",
+                                            styleVariants({
+                                                variant,
+                                                size,
+                                                className,
+                                            }),
+                                        )}
                                         onClick={openConnectModal}
                                         type="button"
                                     >
+                                        {leftIcon && <span>{leftIcon}</span>}
                                         Connect Wallet
-                                    </Button>
+                                    </button>
                                 );
                             }
                             if (chain.unsupported) {
                                 return (
-                                    <Button
-                                        variant="secondary"
-                                        className="w-full"
-                                        size="lg"
+                                    <button
+                                        className={cn(
+                                            "w-full",
+                                            styleVariants({
+                                                variant,
+                                                size,
+                                                className,
+                                            }),
+                                        )}
                                         onClick={openChainModal}
                                         type="button"
                                     >
+                                        {leftIcon && <span>{leftIcon}</span>}
                                         Wrong network
-                                    </Button>
+                                    </button>
                                 );
                             }
                             return (
                                 <div style={{ display: "flex", gap: 12 }}>
-                                    <Button
-                                        variant="secondary"
-                                        className="w-full"
-                                        size="lg"
+                                    <button
+                                        className={cn(
+                                            "w-full",
+                                            styleVariants({
+                                                variant,
+                                                size,
+                                                className,
+                                            }),
+                                        )}
                                         onClick={openChainModal}
                                         style={{
                                             display: "flex",
@@ -70,6 +108,8 @@ export const ConnectButton = () => {
                                         }}
                                         type="button"
                                     >
+                                        {leftIcon && <span>{leftIcon}</span>}
+
                                         {chain.hasIcon && (
                                             <div
                                                 style={{
@@ -97,20 +137,28 @@ export const ConnectButton = () => {
                                                 )}
                                             </div>
                                         )}
+
                                         {chain.name}
-                                    </Button>
-                                    <Button
-                                        variant="secondary"
-                                        className="w-full"
-                                        size="lg"
+                                    </button>
+                                    <button
+                                        className={cn(
+                                            "w-full",
+                                            styleVariants({
+                                                variant,
+                                                size,
+                                                className,
+                                            }),
+                                        )}
                                         onClick={openAccountModal}
                                         type="button"
                                     >
+                                        {leftIcon && <span>{leftIcon}</span>}
+
                                         {account.displayName}
                                         {account.displayBalance
                                             ? ` (${account.displayBalance})`
                                             : ""}
-                                    </Button>
+                                    </button>
                                 </div>
                             );
                         })()}
