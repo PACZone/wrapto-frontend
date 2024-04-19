@@ -1,15 +1,51 @@
 import React from "react";
 import { cn } from "../../lib/utils";
 import { Link as RouterLink, To } from "react-router-dom";
+import { EllipseIcon } from "assets/icons";
+import { cva, VariantProps } from "class-variance-authority";
 // import { cn } from "../../lib/utils";
 
-type LinksT = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
-    variant?: "primary" | "default" | "secondary";
-    to: To;
-};
+export const linkVariants = cva(
+    "flex gap-[10px] items-center bg-transparent text-primary  whitespace-nowrap transition-colors duration-300 border-b border-transparent ",
+    {
+        variants: {
+            variant: {
+                primary: "hover:border-primary",
+                secondary: "hover:border-secondary",
+            },
+            // size: {
+            //     default: "",
+            // },
+        },
+        defaultVariants: {
+            variant: "primary",
+            // size:"default"
+        },
+    },
+);
+export const ellipseVariants = cva("", {
+    variants: {
+        variant: {
+            // default: "hover:border-primary",
+            primary: "text-primary",
+            secondary: "text-secondary",
+        },
+    },
+    defaultVariants: {
+        variant: "primary",
+    },
+});
 
-const Link: React.FC<LinksT> = ({
-    variant = "default",
+
+export interface LinksProps
+    extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+        VariantProps<typeof linkVariants> {
+    to: To;
+    variantType?: "link";
+}
+
+const Link: React.FC<LinksProps> = ({
+    variant = "primary",
     children,
     className,
     to,
@@ -19,20 +55,18 @@ const Link: React.FC<LinksT> = ({
         <RouterLink
             to={to}
             draggable={false}
-            className={cn(
-                "transition-all duration-300 border-b border-transparent  ",
-                {
-                    "list-item list-disc marker:text-primary  hover:border-primary":
-                        variant === "primary",
-                    "list-item list-disc ": variant === "secondary",
-                    "hover:border-primary":
-                        variant === "default" || variant === "secondary",
-                },
-                className,
-            )}
+            // className={cn(
+            //     "flex gap-[11px] items-center transition-all duration-300  ",
+
+            //     className,
+            // )}
+            className={cn(linkVariants({ variant, className }))}
             {...restProps}
         >
-            {children}
+            <span>
+                <EllipseIcon className={cn(ellipseVariants({ variant }))} />
+            </span>
+            <>{children}</>
         </RouterLink>
     );
 };
