@@ -7,15 +7,17 @@ import {
     SelectValue,
 } from "components/shared/Select";
 import { TextField } from "components/shared/TextField";
+import { useTransferBoxContext } from "context/TransferBoxContext";
 import { HTMLInputTypeAttribute } from "react";
 
 type SelectItemsT = {
     title: string;
     icon: string;
+    value: string;
 };
 type TransferBoxProps = {
     title: string;
-    value?: string;
+    value?: string | number;
     helperText?: string;
     selectItems: SelectItemsT[];
     actionButton?: React.ReactNode;
@@ -37,6 +39,7 @@ export default function TransferBox({
     inputType,
     leading = false,
 }: TransferBoxProps) {
+    const { setNetwork } = useTransferBoxContext();
     return (
         <div className=" p-sp7 rounded-xl bg-[#0C0E0ECC] bg-opacity-80 border-[1.5px] border-gray-700 ">
             <div className="flex items-center justify-between py-[6px] mb-sp5  ">
@@ -46,7 +49,10 @@ export default function TransferBox({
                 <div className="animate-fade  animate-delay-[150ms]">
                     {selectItems.length > 1 ? (
                         <Select
-                            defaultValue={selectItems[0].title ?? "Pactus"}
+                            defaultValue={selectItems[0].value ?? "Pac"}
+                            onValueChange={value =>
+                                setNetwork && setNetwork(value)
+                            }
                             disabled={selectItems.length < 3}
                         >
                             <SelectGroup>
@@ -60,7 +66,7 @@ export default function TransferBox({
                                     {selectItems.map((item, key) => (
                                         <SelectItem
                                             className=" gap-2 "
-                                            value={item.title}
+                                            value={item.value}
                                             key={key}
                                         >
                                             <div className="flex body-2 text-gray-50 gap-2 items-center justify-between w-full">

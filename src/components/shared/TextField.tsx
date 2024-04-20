@@ -124,6 +124,7 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
                         )}
 
                         <input
+                            autoComplete="off"
                             onBlur={e => {
                                 setIsFocused(false);
                                 onBlur && onBlur(e);
@@ -147,12 +148,13 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
                         />
 
                         <div className="flex gap-sp2">
-                            {closeIcon && localValue && !disabled && (
+                            {closeIcon && !!localValue && !disabled && (
                                 <span
                                     className={` flex items-center justify-end  [&>svg]:size-sp7 text-absolute-white`}
                                 >
                                     <>
                                         <IconButton
+                                            type="button"
                                             disabled={disabled}
                                             onClick={() => {
                                                 setLocalValue("");

@@ -20,4 +20,8 @@ export const links: LinkT[] = [
         name: "Pactus Lock Address",
         link: "/",
     },
+    {
+        name: "Recent transactions",
+        link: "/transactions",
+    },
 ];

@@ -9,7 +9,7 @@ type ComponentProps<T extends keyof JSX.IntrinsicElements> = {
     size?: "default" | "lg" | null | undefined;
     className?: string;
     variantType?: "button" | "link";
-    leftIcon ?:ReactNode
+    leftIcon?: ReactNode;
 } & Omit<JSX.IntrinsicElements[T], "variant" | "size" | "className">;
 
 export const ConnectButton = <T extends keyof JSX.IntrinsicElements>({
@@ -40,6 +40,8 @@ export const ConnectButton = <T extends keyof JSX.IntrinsicElements>({
                 // &&
                 // (!authenticationStatus ||
                 //     authenticationStatus === "authenticated");
+                // if (account) setAccount && setAccount(account);
+            
                 return (
                     <div
                         {...(!ready && {
