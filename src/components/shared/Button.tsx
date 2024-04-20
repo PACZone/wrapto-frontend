@@ -3,6 +3,7 @@ import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "lib/utils";
+import Spinner from "./Spinner";
 
 const buttonVariants = cva(
     "inline-flex gap-sp1 items-center justify-center whitespace-nowrap rounded-md   ring-offset-background transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none",
@@ -33,12 +34,14 @@ export interface ButtonProps
         VariantProps<typeof buttonVariants> {
     asChild?: boolean;
     leftIcon?: React.ReactNode;
+    isLoading?: boolean;
     variantType?: "button";
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     (
         {
+            isLoading,
             children,
             leftIcon,
             className,
@@ -50,14 +53,24 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ref,
     ) => {
         const Comp = asChild ? Slot : "button";
+
         return (
             <Comp
                 className={cn(buttonVariants({ variant, size, className }))}
                 ref={ref}
                 {...props}
             >
-                {leftIcon && <span>{leftIcon}</span>}
-                <>{children}</>
+                {isLoading ? (
+                    <div>
+                        <Spinner />
+                    </div>
+                ) : (
+                    <>
+                        {leftIcon && <span>{leftIcon}</span>}
+
+                        <>{children}</>
+                    </>
+                )}
             </Comp>
         );
     },
