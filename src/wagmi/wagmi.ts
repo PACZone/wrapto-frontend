@@ -1,20 +1,19 @@
 import { getDefaultConfig } from '@rainbow-me/rainbowkit';
-// import { http, createConfig } from 'wagmi'
-import { arbitrum, base, mainnet, optimism, polygon, sepolia, zora } from 'wagmi/chains'
-// import { coinbaseWallet, injected, walletConnect } from 'wagmi/connectors'
+import { polygonAmoy } from 'viem/chains';
 
 
 export const config = getDefaultConfig({
-  appName: 'RainbowKit App',
-  projectId: 'YOUR_PROJECT_ID',
+  appName: 'Wrapto',
+  projectId: '339296f0d3af3f76bce150594097de48',
   chains: [
-    mainnet,
-    polygon,
-    optimism,
-    arbitrum,
-    base,
-    zora,
-    sepolia
+    // mainnet,
+    polygonAmoy,
+    // polygon,
+    // optimism,
+    // arbitrum,
+    // base,
+    // zora,
+    // sepolia
   ],
   ssr: false,
 });

@@ -2,16 +2,19 @@
     "pactus": [
         {
             "title": "Pactus",
-            "icon": "/companies/pactus.svg"
+            "icon": "/companies/pactus.svg",
+            "value": "Pac"
         }
     ],
     "companies": [
         {
+            "value": "amoy",
             "title": "Polygon Network",
             "icon": "/companies/polygon.svg"
         },
         {
             "title": "Pactus",
+            "value":"Pac",
             "icon": "/companies/pactus.svg"
         }
     ]

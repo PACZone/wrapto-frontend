@@ -10,6 +10,7 @@
         "preview": "vite preview"
     },
     "dependencies": {
+        "@radix-ui/react-dialog": "^1.0.5",
         "@radix-ui/react-select": "^2.0.0",
         "@rainbow-me/rainbowkit": "^2.0.5",
         "@studio-freight/react-lenis": "^0.0.46",
@@ -23,7 +24,7 @@
         "react-scroll": "^1.9.0",
         "tailwind-merge": "^2.2.2",
         "tailwindcss-animated": "^1.0.1",
-        "viem": "^2.9.21",
+        "viem": "^2.9.23",
         "wagmi": "^2.5.20"
     },
     "devDependencies": {

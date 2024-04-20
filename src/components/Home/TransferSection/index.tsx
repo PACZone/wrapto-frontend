@@ -1,107 +1,68 @@
-import { Button } from "components/shared/Button";
-import TransferBox from "../TransferBox";
-import data from "../data.json";
-import { useState } from "react";
-import { cn, formatNumber } from "lib/utils";
-import { ArrowsUpDown } from "assets/icons";
+
+
 import { ConnectButton } from "components/shared/ConnectButton";
 // import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { useAccount } from "wagmi";
+
+import { networks } from "wagmi/networks";
+import BridgeToPacButton from "./BridgeToPacButton";
+import BridgeFromPacButton from "./BridgeFromPacButton";
+import TransferBoxes from "./TransferBoxes";
+import { useTransferBoxContext } from "context/TransferBoxContext";
 
 export default function TransferSection() {
-    const [transferTo, setTransferTo] = useState<string>("");
-    const [transferFrom, setTransferFrom] = useState<string>("");
-    const [price, setPrice] = useState<number>(0);
+ const {
+     network,
+     transferFrom,
+     transferTo,
+     animationKey,
+     isFromPac,
+ } = useTransferBoxContext();
 
-    const handleCopy = async () => {
-        await navigator.clipboard.readText().then(text => {
-            setTransferTo(text);
-        });
-    };
-    const handleCalculatePrice = (value: string) => {
-        const calculatedPrice = +value / 1.99;
-        setPrice(calculatedPrice);
-    };
-
-    const [toggle, setToggle] = useState(false);
-    const [animationKey, setAnimationKey] = useState(0);
-    const handleToggle = () => {
-        setToggle(!toggle);
-        setAnimationKey(prevKey => prevKey + 1);
-    };
+    const { isConnected } = useAccount();
+    const account = useAccount();
 
     return (
-        <section className="space-y-sp9 max-w-[884px] mx-auto">
+        <form
+            onSubmit={e => {
+                e.preventDefault();
+            }}
+            className="space-y-sp9 max-w-[884px] mx-auto"
+        >
             <div className="space-y-sp5">
-                <div className="space-y-sp7">
-                    <div>
-                        <TransferBox
-                            key={animationKey}
-                            onChange={e => {
-                                const value = e.target.value;
-                                handleCalculatePrice(value);
-                                setTransferFrom(e.target.value);
-                            }}
-                            leading={toggle ? "PAC" : "POL"}
-                            value={transferFrom}
-                            inputType="number"
-                            // actionButton={
-                            //     <Button onClick={handleMax}>Max</Button>
-                            // }
-                            helperText={`$${formatNumber(price)}`}
-                            title="Transfer From"
-                            selectItems={toggle ? data.pactus : data.companies}
-                            placeholder="0"
-                            label="Amount"
-                        />
-                    </div>
-                    <div className="flex justify-center">
-                        <button
-                            className=" bg-gray-800 p-[10px] rounded-[9px] text-white "
-                            onClick={handleToggle}
-                        >
-                            <span className="sr-only">arrows-up-down</span>
-                            <ArrowsUpDown
-                                key={animationKey + 5}
-                                className="animate-rotate-x animate-duration-[1000ms]"
-                            />
-                        </button>
-                    </div>
+                <TransferBoxes
+                    isConnected={isConnected}
+                    address={account.address}
+                />
 
-                    <div>
-                        <TransferBox
-                            key={animationKey + 1}
-                            onChange={e => setTransferTo(e.target.value)}
-                            value={transferTo}
-                            actionButton={
-                                <Button onClick={handleCopy}>Paste</Button>
-                            }
-                            title="Transfer To"
-                            selectItems={toggle ? data.companies : data.pactus}
-                            label={`Destination address in ${!toggle ? "Polygon" : "Pactus"} network`}
-                            placeholder="EX: pc1zzzvlcqge523yg8re8hgnk72jsfdatncusmf6uy"
-                        />
-                    </div>
-                </div>
-                <p
-                    className={cn(
-                        "body-2 text-white transition-all duration-300",
-                    )}
-                >
-                    Polygon gas fee ~ 0.0017 ETH <br /> Bridge fee = 1 PAC
-                </p>
+         
             </div>
             <div
                 className="transition-all animate-duration-[1000ms] animate-fade"
                 key={animationKey + 3}
             >
-                {toggle ? (
-                    <Button variant="secondary" size="lg" className="w-full">
-                        Bridge
-                    </Button>
+                {isConnected ? (
+                    <>
+                        <BridgeToPacButton
+                            network={network}
+                            transferFrom={transferFrom}
+                            transferTo={transferTo}
+                            disabled={
+                                account.chainId !== networks[network].chainId
+                            }
+                        />
+                    </>
+                ) : isFromPac ? (
+                    <BridgeFromPacButton
+                        network={network}
+                        transferFrom={transferFrom}
+                        transferTo={transferTo}
+                        disabled={account.chainId !== networks[network].chainId}
+                    />
                 ) : (
                     <ConnectButton variantType="button" size="lg" />
                 )}
             </div>
-        </section>
+        </form>
     );
 }
