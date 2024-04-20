@@ -1,5 +1,3 @@
-
-
 import { ConnectButton } from "components/shared/ConnectButton";
 // import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { useAccount } from "wagmi";
@@ -11,13 +9,8 @@ import TransferBoxes from "./TransferBoxes";
 import { useTransferBoxContext } from "context/TransferBoxContext";
 
 export default function TransferSection() {
- const {
-     network,
-     transferFrom,
-     transferTo,
-     animationKey,
-     isFromPac,
- } = useTransferBoxContext();
+    const { network, transferFrom, transferTo, animationKey, isFromPac } =
+        useTransferBoxContext();
 
     const { isConnected } = useAccount();
     const account = useAccount();
@@ -34,16 +27,14 @@ export default function TransferSection() {
                     isConnected={isConnected}
                     address={account.address}
                 />
-
-         
             </div>
             <div
                 className="transition-all animate-duration-[1000ms] animate-fade"
                 key={animationKey + 3}
             >
-                {isConnected ? (
+                {isConnected && isFromPac ? (
                     <>
-                        <BridgeToPacButton
+                        <BridgeFromPacButton
                             network={network}
                             transferFrom={transferFrom}
                             transferTo={transferTo}
@@ -52,8 +43,8 @@ export default function TransferSection() {
                             }
                         />
                     </>
-                ) : isFromPac ? (
-                    <BridgeFromPacButton
+                ) : isConnected && !isFromPac ? (
+                    <BridgeToPacButton
                         network={network}
                         transferFrom={transferFrom}
                         transferTo={transferTo}

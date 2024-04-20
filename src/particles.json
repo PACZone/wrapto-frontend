@@ -1,0 +1,37 @@
+{
+    "background": {
+        "color": "#0C0E0E"
+    },
+    "particles": {
+        "color": {
+            "value": "#9EAAB0"
+        },
+        "collisions": {
+            "enable": true
+        },
+        "move": {
+            "direction": "none",
+            "enable": true,
+            "outMode": "bounce",
+            "random": false,
+            "speed": 0.4,
+            "straight": false
+        },
+        "number": {
+            "density": {
+                "enable": true
+            },
+            "value": 700
+        },
+        "opacity": {
+            "value": 0.5
+        },
+        "shape": {
+            "type": "circle"
+        },
+        "size": {
+            "random": true,
+            "value": 1.5
+        }
+    }
+}
