@@ -14,6 +14,7 @@ import { loadFull } from "tsparticles";
 import "./App.css";
 import particlesOptions from "./particles.json";
 import { ISourceOptions } from "@tsparticles/engine";
+import ScrollToTop from "components/ScrollToTop";
 
 export default function App() {
     const [init, setInit] = useState(false);
@@ -38,6 +39,7 @@ export default function App() {
     useEffect(() => {}, []);
     return (
         <ReactLenis root>
+            <ScrollToTop />
             <Loading />
             {!loading && (
                 <>

@@ -11,12 +11,11 @@ export default function BridgeButton({
     transferTo,
     network,
 }: BridgeButtonProps) {
-    
     const { writeContract, error, isPending, data: hash } = useWriteContract();
     const navigate = useNavigate();
     if (hash && !isPending) {
-        navigate(`/${hash}`);
-        return null; 
+        navigate(`/tx/success/${hash}?network=${network}`);
+        return null;
     }
 
     const handleBridge = () => {
@@ -36,7 +35,6 @@ export default function BridgeButton({
                 isLoading={isPending}
                 type="submit"
                 variant="secondary"
-                size="lg"
                 className="w-full"
                 onClick={handleBridge}
                 onSubmit={handleBridge}
