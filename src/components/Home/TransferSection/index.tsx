@@ -51,7 +51,7 @@ export default function TransferSection() {
                         disabled={account.chainId !== networks[network].chainId}
                     />
                 ) : (
-                    <ConnectButton variantType="button" size="lg" />
+                    <ConnectButton variantType="button" />
                 )}
             </div>
         </form>

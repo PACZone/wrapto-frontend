@@ -1,4 +1,3 @@
-
 import tailwindcssAnimated from 'tailwindcss-animated';
 
 
@@ -24,10 +23,10 @@ export default {
                 sp6: "var(--sp6)",
                 sp7: "var(--sp7)",
                 sp8: "var(--sp8)",
-                sp9: "var(--s9)",
-                sp10: "var(--s10)",
-                sp11: "var(--s11)",
-                sp12: "var(--s12)",
+                sp9: "var(--sp9)",
+                sp10: "var(--sp10)",
+                sp11: "var(--sp11)",
+                sp12: "var(--sp12)",
                 sp13: "var(--sp13)",
                 sp14: "var(--sp14)",
                 sp15: "var(--sp15)",
