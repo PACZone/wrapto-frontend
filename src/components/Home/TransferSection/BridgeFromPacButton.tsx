@@ -7,7 +7,7 @@ export default function BridgeFromPacButton({
 }: BridgeButtonProps) {
     console.log(transferFrom, transferTo);
     return (
-        <Button type="submit" variant="secondary" size="lg" className="w-full">
+        <Button type="submit" variant="secondary"  className="w-full">
             Bridge
         </Button>
     );
