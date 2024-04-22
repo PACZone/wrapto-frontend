@@ -10,7 +10,7 @@ export default function SuccessTx() {
     const [searchParams] = useSearchParams();
     const network = searchParams.get("network");
     return (
-        <section className="bg-background max-w-[732px] mx-auto lg:mt-sp16 mb-11">
+        <section className="bg-background max-w-[732px] mx-auto lg:mt-sp16 mt-sp12 mb-11">
             <div className="relative border-x border-t border-gray-700  flex flex-col items-center rounded-t-xl pt-sp8 gap-sp11  px-sp7">
                 <span className="rounded-full p-sp9 bg-gray-900">
                     <CheckIcon className="text-secondary w-full" />
