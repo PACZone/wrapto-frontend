@@ -1,16 +1,16 @@
-import { CopyIcon } from "assets/icons";
-import { useSearchParams } from "react-router-dom";
 import SharpBorder from "assets/svg/sharpBorder.svg";
 import { Button } from "components/shared/Button";
 import { TextField } from "components/shared/TextField";
-import { handleCopy } from "lib/utils";
 import { motion } from "framer-motion";
 
-export default function TransactionMemo() {
-    const [searchParams] = useSearchParams();
-    const transferFrom = searchParams.get("transferFrom");
-    const transferTo = searchParams.get("transferTo");
+import CopyButton from "./CopyButton";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
+export default function TransactionMemo() {
+    const navigate = useNavigate();
+    const [searchParams] = useSearchParams();
+    const transferTo = searchParams.get("transferTo");
+    const PACTUS_WALLET = "tpc1zlymfcuxlgvvuud2q4zw0scllqn74d2f90hld6w";
     return (
         <motion.section
             initial={{ opacity: 0, y: 100 }}
@@ -33,40 +33,24 @@ export default function TransactionMemo() {
                         Transaction Memo
                     </label>
                     <div className="border border-gray-900 rounded-xl p-sp5 text-gray-400">
-                        <p className=" min-h-[114px]">
-                            {transferFrom}
-                            {transferTo}
-                        </p>
-                        <Button
-                            onClick={() => handleCopy(transferFrom ?? "")}
-                            size="default"
-                            className="text-white flex gap-sp1 items-center w-full"
-                        >
-                            <CopyIcon />
-                            <span>Copy</span>
-                        </Button>
+                        <p className=" min-h-[114px]">{transferTo}@POLYGON</p>
+                        <CopyButton text={`${transferTo}@POLYGON` ?? ""} />
                     </div>
                 </div>
                 <TextField
-                labelClasses="!text-gray-100"
+                    labelClasses="!text-gray-100"
                     parentClasses="w-full"
                     label="Wrapto Wallet Address:"
                     className="text-gray-400"
-                    value={transferTo ?? ""}
+                    value={PACTUS_WALLET ?? ""}
                     readOnly
-                    rightIcon={
-                        <Button
-                            onClick={() => handleCopy(transferTo ?? "")}
-                            size="default"
-                            className="text-white flex gap-sp1 items-center"
-                        >
-                            <CopyIcon />
-                            <span>Copy</span>
-                        </Button>
-                    }
+                    rightIcon={<CopyButton text={PACTUS_WALLET} />}
                 />
-                <Button variant="secondary" className="w-full">
-                    {" "}
+                <Button
+                    onClick={() => navigate("/")}
+                    variant="secondary"
+                    className="w-full"
+                >
                     Back To Home
                 </Button>
 

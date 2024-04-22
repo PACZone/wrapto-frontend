@@ -14,7 +14,6 @@ import { useNavigate } from "react-router-dom";
 import { BridgeButtonProps } from "types/bridgeButton";
 
 export default function BridgeFromPacButton({
-    transferFrom,
     transferTo,
 }: BridgeButtonProps) {
     const [isAgree, setIsAgree] = useState<boolean>(false);
@@ -52,7 +51,7 @@ export default function BridgeFromPacButton({
                     <Button
                         onClick={() =>
                             navigate(
-                                `/transactionMemo?transferFrom=${transferFrom}&transferTo=${transferTo}`,
+                                `/transactionMemo?transferTo=${transferTo}`,
                             )
                         }
                         className="w-full"
