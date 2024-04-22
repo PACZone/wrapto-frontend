@@ -68,7 +68,9 @@ export default function TransferBoxes({
                         inputType="number"
                         actionButton={
                             !isFromPac && isConnected ? (
-                                <Button onClick={handleMax}>Max</Button>
+                                <Button size="default" onClick={handleMax}>
+                                    Max
+                                </Button>
                             ) : undefined
                         }
                         helperText={
@@ -101,7 +103,11 @@ export default function TransferBoxes({
                         onChange={e => setTransferTo(e.target.value)}
                         value={transferTo}
                         actionButton={
-                            <Button type="button" onClick={handleCopy}>
+                            <Button
+                                size="default"
+                                type="button"
+                                onClick={handleCopy}
+                            >
                                 Paste
                             </Button>
                         }

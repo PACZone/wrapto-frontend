@@ -8,7 +8,7 @@ export const routes = {
         loader: <Home />,
     },
     Success: {
-        path: "/tx/Success/:hash",
+        path: "/tx/success/:hash",
         element: <SuccessPage />,
     },
 };
