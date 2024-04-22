@@ -11,7 +11,7 @@ export default function SuccessTx() {
     const network = searchParams.get("network");
     return (
         <section className="bg-background max-w-[732px] mx-auto lg:mt-sp16 mb-11">
-            <div className=" border-x border-t border-gray-700  flex flex-col items-center rounded-t-xl pt-sp8 gap-sp11  px-sp7">
+            <div className="relative border-x border-t border-gray-700  flex flex-col items-center rounded-t-xl pt-sp8 gap-sp11  px-sp7">
                 <span className="rounded-full p-sp9 bg-gray-900">
                     <CheckIcon className="text-secondary w-full" />
                 </span>
@@ -48,8 +48,13 @@ export default function SuccessTx() {
                         Back to Home
                     </Link>
                 </div>
+                <div className="bg-background h-1  z-10 absolute -bottom-1 w-full "></div>
             </div>
-            <img src={SharpBorder} alt="SharpBorder" className="w-full" />
+            <img
+                src={SharpBorder}
+                alt="SharpBorder"
+                className="w-full  relative "
+            />
         </section>
     );
 }
