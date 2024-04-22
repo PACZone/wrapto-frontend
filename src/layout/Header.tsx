@@ -16,6 +16,7 @@ export function Header() {
                     {links.map((link, key) => (
                         <li key={key}>
                             <Link
+                            target={link.link.includes("http")?"_blank":"_self"}
                                 to={link.link}
                                 className="body-1"
                                 variant="primary"

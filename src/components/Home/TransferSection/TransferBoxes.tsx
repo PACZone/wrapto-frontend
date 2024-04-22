@@ -38,7 +38,7 @@ export default function TransferBoxes({
 
     const maxContract = contractData ? unDecimal(Number(contractData)) : 0;
 
-    const handleCopy = async () => {
+    const handlePaste = async () => {
         await navigator.clipboard.readText().then(text => {
             setTransferTo(text);
         });
@@ -106,7 +106,7 @@ export default function TransferBoxes({
                             <Button
                                 size="default"
                                 type="button"
-                                onClick={handleCopy}
+                                onClick={handlePaste}
                             >
                                 Paste
                             </Button>

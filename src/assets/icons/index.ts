@@ -5,3 +5,4 @@ export * from "./ChevronDown";
 export * from "./ArrowsUpDown";
 export * from "./EllipseIcon";
 export * from "./CheckIcon";
+export * from "./CopyIcon";
