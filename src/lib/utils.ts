@@ -16,8 +16,12 @@ export function unDecimal(num: number): number {
   return Number(num) / Number(1e9)
 }
 
-export const handleCopy = async () => {
+export const handlePaste = async () => {
     await navigator.clipboard.readText().then(text => {
     return text
       });
     };
+
+export const handleCopy = (text: string) => {
+    navigator.clipboard.writeText(text);
+  };

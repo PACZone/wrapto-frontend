@@ -148,7 +148,7 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
                         />
 
                         <div className="flex gap-sp2">
-                            {closeIcon && !!localValue && !disabled && (
+                            {closeIcon && !!localValue && !disabled && !props.readOnly && (
                                 <span
                                     className={` flex items-center justify-end  [&>svg]:size-sp7 text-absolute-white`}
                                 >

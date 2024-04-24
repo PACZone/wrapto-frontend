@@ -6,19 +6,19 @@ type LinkT = {
 export const links: LinkT[] = [
     {
         name: "Join Wrapto on Discord",
-        link: "/",
+        link: "https://discord.gg/8GAKqgjg99",
     },
     {
         name: "GitHub",
-        link: "/",
+        link: "https://github.com/PACZone/wrapto",
     },
     {
         name: "wPAC on Polygon",
-        link: "/",
+        link: "https://www.oklink.com/amoy/token/0x56d09db604b815e4322ca825d5eb10a6a9938d92#address=0x56d09db604b815e4322ca825d5eb10a6a9938d92",
     },
     {
         name: "Pactus Lock Address",
-        link: "/",
+        link: "http://pactus-phoenix1.dezh.tech/account/address/tpc1zlymfcuxlgvvuud2q4zw0scllqn74d2f90hld6w",
     },
     {
         name: "Recent transactions",

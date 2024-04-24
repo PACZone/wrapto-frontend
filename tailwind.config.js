@@ -52,6 +52,7 @@ export default {
                     900: "var(--gray-900)",
                     950: "var(--gray-950)",
                 },
+                error: 'var(--error)'
             },
         },
         fontFamily: {

@@ -39,9 +39,9 @@ export default function TransferBox({
     inputType,
     leading = false,
 }: TransferBoxProps) {
-    const { setNetwork } = useTransferBoxContext();
+    const { setNetwork, isFromPac } = useTransferBoxContext();
     return (
-        <div className=" p-sp7 rounded-xl bg-[#0C0E0ECC] bg-opacity-80 border-[1.5px] border-gray-700 ">
+        <div className=" p-sp7 rounded-xl bg-[#0C0E0ECC] bg-opacity-80 border-[1.5px] border-gray-700 transition-all ">
             <div className="flex items-center justify-between py-[6px] mb-sp5  ">
                 <div id="transfer-box" className="text-gray-400 body-1">
                     {title}
@@ -100,21 +100,23 @@ export default function TransferBox({
                     )}
                 </div>
             </div>
-            <div className="border-t border-gray-900 py-sp5">
-                <TextField
-                    type={inputType}
-                    value={value}
-                    onChange={onChange}
-                    helperText={helperText}
-                    placeholder={placeholder}
-                    leftIcon={
-                        leading ?? <span className="min-w-[54px]">PAC</span>
-                    }
-                    label={label}
-                    labelClasses="!text-gray-100"
-                    rightIcon={actionButton}
-                />
-            </div>
+            {(!isFromPac || selectItems.length > 1) && (
+                <div className="border-t border-gray-900 py-sp5">
+                    <TextField
+                        type={inputType}
+                        value={value}
+                        onChange={onChange}
+                        helperText={helperText}
+                        placeholder={placeholder}
+                        leftIcon={
+                            leading ?? <span className="min-w-[54px]">PAC</span>
+                        }
+                        label={label}
+                        labelClasses="!text-gray-100"
+                        rightIcon={actionButton}
+                    />
+                </div>
+            )}
         </div>
     );
 }
