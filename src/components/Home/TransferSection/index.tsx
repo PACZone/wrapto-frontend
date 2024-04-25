@@ -32,7 +32,7 @@ export default function TransferSection() {
                 className="transition-all animate-duration-[1000ms] animate-fade"
                 key={animationKey + 3}
             >
-                {isConnected && isFromPac ? (
+                { isFromPac ? (
                     <>
                         <BridgeFromPacButton
                             network={network}
