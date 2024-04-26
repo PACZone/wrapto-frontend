@@ -6,3 +6,6 @@ export * from "./ArrowsUpDown";
 export * from "./EllipseIcon";
 export * from "./CheckIcon";
 export * from "./CopyIcon";
+export * from "./SearchIcon";
+export * from "./ArrowTopRightOnSquare";
+export * from "./BurgerIcon";

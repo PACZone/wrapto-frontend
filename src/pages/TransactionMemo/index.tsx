@@ -1,6 +1,6 @@
 import TransactionMemo from "components/TransactionMemo";
 
-export default function TransactionMemoPage() {
+export function TransactionMemoPage() {
     return (
         <div>
             <TransactionMemo />
