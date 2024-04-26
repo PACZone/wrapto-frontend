@@ -51,7 +51,7 @@ export default function Transactions() {
         <main className="container mx-auto w-full">
             <SearchBox onSearch={handleSearch} />
             <div key={searchValue}>
-                <div className="flex justify-between">
+                <div className="flex justify-between md:flex-nowrap gap-sp2 flex-wrap">
                     <h4 className="title-2 flex gap-sp1 flex-wrap w-full items-center">
                         {searchValue ? (
                             <>
@@ -79,7 +79,7 @@ export default function Transactions() {
                     )}
                 </div>
                 {isLoading ? (
-                    <div className="flex py-sp8 justify-center">
+                    <div className="flex py-sp11  justify-center">
                         <Spinner />
                     </div>
                 ) : data.length > 0 ? (
@@ -92,7 +92,9 @@ export default function Transactions() {
                         <ResultTable data={data} />
                     </motion.div>
                 ) : (
-                    <div className="flex justify-center py-sp11 heading-6">No data found!</div>
+                    <div className="flex justify-center py-sp11 heading-6">
+                        No data found!
+                    </div>
                 )}
             </div>
         </main>

@@ -16,7 +16,7 @@ import { useState } from "react";
 export default function BurgerMenu() {
     const [open, setOpen] = useState(false);
     return (
-        <div className="flex justify-between items-center md:hidden">
+        <div className="flex justify-between items-center lg:hidden">
             <Sheet
                 open={open}
                 onOpenChange={isOpen => {

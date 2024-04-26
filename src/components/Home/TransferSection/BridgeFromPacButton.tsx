@@ -32,9 +32,11 @@ export default function BridgeFromPacButton({
         if (!transferFrom)
             return setTransferFromError("This field is required!");
         if (!transferTo) return setTransferToError("This field is required!");
-        if (polygonValidator(transferTo.toLocaleString())) {
-            setIsOpen(true);
+
+        if (!polygonValidator(transferTo.toLocaleString())) {
+            return setTransferToError("Value not valid!");
         }
+        setIsOpen(true);
     };
     return (
         <Dialog
