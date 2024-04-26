@@ -7,7 +7,7 @@ export default function HeroSection() {
     return (
         <div className="md:py-[145px] relative flex-col flex justify-center items-center max-w-[1198px] mx-auto text-center mt-[152px] mb-[218px] gap-sp10">
             <Reveal>
-                <h1 className="lg:heading-1 md:heading-4 heading-3">
+                <h1 className="lg:heading-1 heading-4 ">
                     Bridge your{" "}
                     <span className="text-secondary border rounded-full border-secondary px-sp8 py-sp3 inline-flex items-center my-2 md:my-0 lg:max-h-sp13 max-h-sp11 bg-[#24292BB8] bg-opacity-[72%]">
                         {" "}
