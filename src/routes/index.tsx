@@ -3,6 +3,7 @@ import {
     Home,
     TransactionMemoPage,
     TransactionsPage,
+    NotFound,
 } from "pages";
 
 export const routes = {
@@ -22,5 +23,9 @@ export const routes = {
     Transactions: {
         path: "/transactions",
         element: <TransactionsPage />,
+    },
+    NotFound: {
+        path: "*",
+        element: <NotFound />,
     },
 };
