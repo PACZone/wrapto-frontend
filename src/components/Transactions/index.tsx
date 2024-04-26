@@ -8,15 +8,32 @@ import { Button } from "components/shared/Button";
 import { CloseIcon } from "assets/icons";
 import { Badge } from "components/shared/Badge";
 import Spinner from "components/shared/Spinner";
+import { useSearchParams } from "react-router-dom";
 
 export default function Transactions() {
     const [searchValue, setSearchValue] = useState("");
+    const [searchParams, setSearchParams] = useSearchParams();
+    const searchQuery = searchParams.get("q");
     const [data, setData] = useState<TransactionT[] | []>([]);
     const [reFetch, setReFetch] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
+
     const handleReset = () => {
+        searchParams.delete("q");
+        setSearchParams(searchParams);
         setReFetch(!reFetch);
         setSearchValue("");
+    };
+    const fetchBySearch = async (value: string) => {
+        setIsLoading(true);
+        try {
+            const res = await searchServices(value);
+            setData(res.data.data);
+        } catch (error) {
+            console.log(error);
+        } finally {
+            setIsLoading(false);
+        }
     };
     useEffect(() => {
         const fetch = async () => {
@@ -30,21 +47,14 @@ export default function Transactions() {
                 setIsLoading(false);
             }
         };
-        fetch();
+        searchQuery ? fetchBySearch(searchQuery) : fetch();
     }, [reFetch]);
 
     const handleSearch = async (value: string) => {
         // Here, you can access the search value when Enter is pressed
         setSearchValue(value);
-        setIsLoading(true);
-        try {
-            const res = await searchServices(value);
-            setData(res.data.data);
-        } catch (error) {
-            console.log(error);
-        } finally {
-            setIsLoading(false);
-        }
+        setSearchParams({ ["q"]: value });
+        fetchBySearch(value);
     };
 
     return (
@@ -67,7 +77,7 @@ export default function Transactions() {
                             "All Recently Transaction"
                         )}
                     </h4>
-                    {searchValue && (
+                    {searchQuery && (
                         <Button
                             onClick={handleReset}
                             className="max-w-[106px] w-full "
