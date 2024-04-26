@@ -1,6 +1,6 @@
 import SuccessTx from "components/SuccessTx";
 
-export default function SuccessPage() {
+export function SuccessPage() {
     return (
         <div>
             <SuccessTx />

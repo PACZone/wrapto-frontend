@@ -27,6 +27,10 @@ export default function TransferBoxes({
         setAnimationKey,
         animationKey,
         isFromPac,
+        transferToError,
+        transferFromError,
+        setTransferToError,
+        setTransferFromError,
     } = useTransferBoxContext();
 
     const { data: contractData } = useReadContract({
@@ -58,9 +62,11 @@ export default function TransferBoxes({
             <div className="space-y-sp7">
                 <div>
                     <TransferBox
+                        errorText={transferFromError}
                         key={animationKey}
                         onChange={e => {
                             const value = e.target.value;
+                            setTransferFromError("");
                             setTransferFrom(Number(value));
                         }}
                         leading={isFromPac ? "PAC" : "wPAC"}
@@ -99,8 +105,12 @@ export default function TransferBoxes({
                 </div>
                 <div>
                     <TransferBox
+                        errorText={transferToError}
                         key={animationKey + 1}
-                        onChange={e => setTransferTo(e.target.value)}
+                        onChange={e => {
+                            setTransferToError("");
+                            setTransferTo(e.target.value);
+                        }}
                         value={transferTo}
                         actionButton={
                             <Button

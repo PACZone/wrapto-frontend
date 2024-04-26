@@ -3,15 +3,20 @@ import { networks } from "wagmi/networks";
 import { abi } from "./abi";
 import { BaseError, useWriteContract } from "wagmi";
 import { useNavigate } from "react-router-dom";
-import { BridgeButtonProps } from "types/bridgeButton";
+import { pactusValidator } from "lib/utils";
 
-export default function BridgeButton({
-    transferFrom,
-    disabled,
-    transferTo,
-    network,
-}: BridgeButtonProps) {
+import { useTransferBoxContext } from "context/TransferBoxContext";
+
+export default function BridgeButton({ disabled }: { disabled: boolean }) {
     const { writeContract, error, isPending, data: hash } = useWriteContract();
+    const {
+        network,
+        transferFrom,
+        transferTo,
+        setTransferToError,
+        setTransferFromError,
+    } = useTransferBoxContext();
+
     const navigate = useNavigate();
     if (hash && !isPending) {
         navigate(`/tx/success/${hash}?network=${network}`);
@@ -20,12 +25,17 @@ export default function BridgeButton({
 
     const handleBridge = () => {
         const num = transferFrom ? +transferFrom * 10 ** 9 : 0;
-        writeContract({
-            abi,
-            address: networks[network].contractAddress,
-            functionName: "bridge",
-            args: [transferTo, num.toString()],
-        });
+        if (!transferTo) return setTransferToError("This field is required!");
+        if (!transferFrom)
+            return setTransferFromError("This field is required!");
+        if (pactusValidator(transferTo.toLocaleString())) {
+            writeContract({
+                abi,
+                address: networks[network].contractAddress,
+                functionName: "bridge",
+                args: [transferTo, num.toString()],
+            });
+        }
     };
 
     return (

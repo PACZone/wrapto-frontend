@@ -2,9 +2,9 @@ import TransferSection from "components/Home/TransferSection";
 import HeroSection from "../../components/Home/HeroSection";
 import { TransferBoxContextProvider } from "context/TransferBoxContext";
 
-export default function Home() {
+export function Home() {
     return (
-        <main className="container mx-auto">
+        <main className="container mx-auto overflow-x-hidden">
             <HeroSection />
             <TransferBoxContextProvider>
                 <TransferSection />

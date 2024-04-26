@@ -5,29 +5,58 @@ import {
     DialogFooter,
     DialogHeader,
     DialogTitle,
-    DialogTrigger,
 } from "components/shared/Dialog";
 import { Button } from "../../shared/Button";
 import { Checkbox } from "components/shared/Checkbox";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { BridgeButtonProps } from "types/bridgeButton";
+import { polygonValidator } from "lib/utils";
+import { useTransferBoxContext } from "context/TransferBoxContext";
 
 export default function BridgeFromPacButton({
-    transferTo,
-}: BridgeButtonProps) {
+    disabled,
+}: {
+    disabled?: boolean;
+}) {
     const [isAgree, setIsAgree] = useState<boolean>(false);
     const navigate = useNavigate();
+    const {
+        transferFrom,
+        transferTo,
+        setTransferToError,
+        setTransferFromError,
+    } = useTransferBoxContext();
+    const [isOpen, setIsOpen] = useState<boolean>(false);
+
+    const handleOpenDialog = () => {
+        if (!transferFrom)
+            return setTransferFromError("This field is required!");
+        if (!transferTo) return setTransferToError("This field is required!");
+        if (polygonValidator(transferTo.toLocaleString())) {
+            setIsOpen(true);
+        }
+    };
     return (
-        <Dialog data-lenis-prevent>
-            <DialogTrigger asChild>
-                <Button type="submit" className="w-full" variant="secondary">
-                    Bridge
-                </Button>
-            </DialogTrigger>
-            <DialogContent data-lenis-prevent className="flex flex-col gap-sp8">
+        <Dialog
+            open={isOpen}
+            onOpenChange={value => setIsOpen(value)}
+            data-lenis-prevent
+        >
+            <Button
+                onClick={handleOpenDialog}
+                disabled={disabled}
+                type="submit"
+                className="w-full"
+                variant="secondary"
+            >
+                Bridge
+            </Button>
+            <DialogContent
+                data-lenis-prevent
+                className="flex flex-col gap-sp8 overflow-y-auto"
+            >
                 <DialogHeader>
-                    <DialogTitle className="text-error text-center">
+                    <DialogTitle className="text-danger text-center">
                         Instructions
                     </DialogTitle>
                 </DialogHeader>
@@ -49,11 +78,13 @@ export default function BridgeFromPacButton({
                 </main>
                 <DialogFooter>
                     <Button
-                        onClick={() =>
-                            navigate(
-                                `/transactionMemo?transferTo=${transferTo}`,
-                            )
-                        }
+                        onClick={() => {
+                            if (polygonValidator(transferTo.toLocaleString())) {
+                                navigate(
+                                    `/transactionMemo?transferTo=${transferTo}&amount=${transferFrom}`,
+                                );
+                            }
+                        }}
                         className="w-full"
                         disabled={!isAgree}
                         variant="secondary"

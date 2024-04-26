@@ -11,6 +11,10 @@ type TransferBoxContextType = {
     isFromPac: boolean;
     setNetwork: React.Dispatch<React.SetStateAction<string>>;
     network: string;
+    setTransferToError: React.Dispatch<React.SetStateAction<string>>;
+    transferToError: string;
+    setTransferFromError: React.Dispatch<React.SetStateAction<string>>;
+    transferFromError: string;
 };
 
 const TransferBoxContext = createContext<TransferBoxContextType | undefined>(
@@ -34,6 +38,8 @@ export const TransferBoxContextProvider: React.FC<{
     const [transferTo, setTransferTo] = useState<string | number>("");
     const [transferFrom, setTransferFrom] = useState<number | string>("");
     const [network, setNetwork] = useState<string>("amoy");
+    const [transferToError, setTransferToError] = useState<string>("");
+    const [transferFromError, setTransferFromError] = useState<string>("");
 
     return (
         <TransferBoxContext.Provider
@@ -48,6 +54,10 @@ export const TransferBoxContextProvider: React.FC<{
                 isFromPac,
                 animationKey,
                 setAnimationKey,
+                transferToError,
+                setTransferToError,
+                transferFromError,
+                setTransferFromError,
             }}
         >
             {children}

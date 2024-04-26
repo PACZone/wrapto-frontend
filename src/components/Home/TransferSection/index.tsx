@@ -9,7 +9,7 @@ import TransferBoxes from "./TransferBoxes";
 import { useTransferBoxContext } from "context/TransferBoxContext";
 
 export default function TransferSection() {
-    const { network, transferFrom, transferTo, animationKey, isFromPac } =
+    const { network, animationKey, isFromPac } =
         useTransferBoxContext();
 
     const { isConnected } = useAccount();
@@ -35,9 +35,6 @@ export default function TransferSection() {
                 { isFromPac ? (
                     <>
                         <BridgeFromPacButton
-                            network={network}
-                            transferFrom={transferFrom}
-                            transferTo={transferTo}
                             disabled={
                                 account.chainId !== networks[network].chainId
                             }
@@ -45,9 +42,6 @@ export default function TransferSection() {
                     </>
                 ) : isConnected && !isFromPac ? (
                     <BridgeToPacButton
-                        network={network}
-                        transferFrom={transferFrom}
-                        transferTo={transferTo}
                         disabled={account.chainId !== networks[network].chainId}
                     />
                 ) : (
