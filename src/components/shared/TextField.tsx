@@ -1,10 +1,9 @@
 import * as React from "react";
 import { cn } from "lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
-import clsx from "clsx";
-
 import { IconButton } from "./IconButton";
 import { CloseIcon } from "assets/icons";
+import clsx from "clsx";
 
 const TextFieldVariants = cva(
     "rounded-xl bg-transparent  body-1 font-normal  flex gap-sp2  items-center px-sp5 appearance-none group-focus:ring-gray-700 group-hover:ring-gray-700  text-absolute-white  group-hover:[&>input]:placeholder:text-absolute-white [&>input]:text-absolute-white  [&>input]:placeholder:text-gray-400  body-1 leading-[24px] outline-none   ring-[1.5px] ring-gray-900  focus-visible:ring-primary-500 hover:ring-gray-700  !focus:ring-primary-500  [&>svg]:stroke-primary-500 [&>svg]:fill-primary-500 disabled:placeholder:gray-300 disabled:text-gray-300 disabled:ring-gray-300 m-0 mt-0 transition-all",
@@ -21,7 +20,7 @@ export interface TextFieldProps
     rightIcon?: React.ReactNode;
     closeIcon?: boolean;
     status?: "error" | "success" | "contained" | "default";
-    helperText?: string;
+    helperText?: string | React.ReactNode;
     label?: string;
     password?: boolean;
     leading?: React.ReactElement | string;
@@ -66,12 +65,15 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
         }, [props.value]);
 
         const [isFocused, setIsFocused] = React.useState<boolean>(false);
-        const helperTextClasses = clsx("caption font-bold text-gray-400");
+        const helperTextClasses = clsx(
+            "caption font-bold text-gray-400 animate-fade-up transition-all duration-700",
+        );
+               
         return (
             <div className={` group space-y-sp2  ${parentClasses || ""}`}>
                 {label && (
                     <label
-                        className={`block text-white text-start body-2 h-sp7 font-light
+                        className={`block text-white text-start body-2  font-light
               ${labelClasses || ""}`}
                         htmlFor={id || `input-wrapto-${label}`}
                     >
@@ -148,29 +150,32 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
                         />
 
                         <div className="flex gap-sp2">
-                            {closeIcon && !!localValue && !disabled && !props.readOnly && (
-                                <span
-                                    className={` flex items-center justify-end  [&>svg]:size-sp7 text-absolute-white`}
-                                >
-                                    <>
-                                        <IconButton
-                                            type="button"
-                                            disabled={disabled}
-                                            onClick={() => {
-                                                setLocalValue("");
-                                                // inputRef.current.value = "";
-                                                customOnchange({
-                                                    target: {
-                                                        value: "",
-                                                    },
-                                                } as React.ChangeEvent<HTMLInputElement>);
-                                            }}
-                                        >
-                                            <CloseIcon className="text-current stroke-current fill-current" />
-                                        </IconButton>
-                                    </>
-                                </span>
-                            )}
+                            {closeIcon &&
+                                !!localValue &&
+                                !disabled &&
+                                !props.readOnly && (
+                                    <span
+                                        className={` flex items-center justify-end  [&>svg]:size-sp7 text-absolute-white`}
+                                    >
+                                        <>
+                                            <IconButton
+                                                type="button"
+                                                disabled={disabled}
+                                                onClick={() => {
+                                                    setLocalValue("");
+                                                    // inputRef.current.value = "";
+                                                    customOnchange({
+                                                        target: {
+                                                            value: "",
+                                                        },
+                                                    } as React.ChangeEvent<HTMLInputElement>);
+                                                }}
+                                            >
+                                                <CloseIcon className="text-current stroke-current fill-current" />
+                                            </IconButton>
+                                        </>
+                                    </span>
+                                )}
                             {rightIcon && !leading && (
                                 <span
                                     className={`flex items-center  justify-end ${
@@ -189,7 +194,7 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
                     </div>
                 </div>
 
-                {helperText && type !== "search" && (
+                {helperText && (
                     <div className={helperTextClasses}>{helperText}</div>
                 )}
             </div>

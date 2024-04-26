@@ -1,4 +1,5 @@
 import tailwindcssAnimated from 'tailwindcss-animated';
+import tailwindcssAnimate from 'tailwindcss-animate';
 
 
 /** @type {import('tailwindcss').Config} */
@@ -52,12 +53,14 @@ export default {
                     900: "var(--gray-900)",
                     950: "var(--gray-950)",
                 },
-                error: 'var(--error)'
+                error: 'var(--error)',
+                danger: 'var(--danger)'
             },
         },
         fontFamily: {
             Neue: "Aeonik Fono TRIAL",
         },
+
         screens: {
             sm: "0px",
             md: "768px",
@@ -69,6 +72,7 @@ export default {
     },
     plugins: [
         tailwindcssAnimated,
+        tailwindcssAnimate,
         function ({
             addComponents
         }) {

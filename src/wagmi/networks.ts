@@ -5,9 +5,9 @@ type NetworkT= {
     name: string;
     contractAddress: ContractAddressT;
     explorer: string;
-    rpcUrl: string;
-    chainId: number;
-    symbol: string;
+    rpcUrl?: string;
+    chainId?: number;
+    symbol?: string;
 }
 
 export const networks : Record<string,NetworkT>={
@@ -19,12 +19,10 @@ export const networks : Record<string,NetworkT>={
     chainId:80002,
     symbol:"MATIC"
   },
-  Pac:{
-  name: 'PAC',
+  pac:{
+    name: 'PAC',
     contractAddress:'0xex',
-    explorer:"https://www.okx.com/explorer/amoy/tx",
-    rpcUrl:"https://polygon-amoy.infura.io/v3/ebf2aa9568884ba0aceb39bc35377102",
-    chainId:1,
+    explorer:"https://pactus-phoenix1.dezh.tech/transaction/id",
     symbol:"PAC"
   }
 }

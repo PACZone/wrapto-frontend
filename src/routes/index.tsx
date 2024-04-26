@@ -1,9 +1,12 @@
-import SuccessPage from "pages/SuccessTx";
-import Home from "../pages/Home";
-import TransactionMemoPage from "../pages//TransactionMemo";
+import {
+    SuccessPage,
+    Home,
+    TransactionMemoPage,
+    TransactionsPage,
+} from "pages";
 
 export const routes = {
-    HOME: {
+    Home: {
         path: "/",
         element: <Home />,
         loader: <Home />,
@@ -15,5 +18,9 @@ export const routes = {
     TransactionMemo: {
         path: "/transactionMemo",
         element: <TransactionMemoPage />,
+    },
+    Transactions: {
+        path: "/transactions",
+        element: <TransactionsPage />,
     },
 };

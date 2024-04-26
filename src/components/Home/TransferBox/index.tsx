@@ -26,6 +26,7 @@ type TransferBoxProps = {
     placeholder?: string;
     label?: string;
     leading?: string | boolean;
+    errorText?: string;
 };
 export default function TransferBox({
     onChange,
@@ -37,9 +38,10 @@ export default function TransferBox({
     actionButton,
     value,
     inputType,
+    errorText,
     leading = false,
 }: TransferBoxProps) {
-    const { setNetwork, isFromPac } = useTransferBoxContext();
+    const { setNetwork } = useTransferBoxContext();
     return (
         <div className=" p-sp7 rounded-xl bg-[#0C0E0ECC] bg-opacity-80 border-[1.5px] border-gray-700 transition-all ">
             <div className="flex items-center justify-between py-[6px] mb-sp5  ">
@@ -49,7 +51,7 @@ export default function TransferBox({
                 <div className="animate-fade  animate-delay-[150ms]">
                     {selectItems.length > 1 ? (
                         <Select
-                            defaultValue={selectItems[0].value ?? "Pac"}
+                            defaultValue={selectItems[0].value ?? "pac"}
                             onValueChange={value =>
                                 setNetwork && setNetwork(value)
                             }
@@ -100,23 +102,28 @@ export default function TransferBox({
                     )}
                 </div>
             </div>
-            {(!isFromPac || selectItems.length > 1) && (
-                <div className="border-t border-gray-900 py-sp5">
-                    <TextField
-                        type={inputType}
-                        value={value}
-                        onChange={onChange}
-                        helperText={helperText}
-                        placeholder={placeholder}
-                        leftIcon={
-                            leading ?? <span className="min-w-[54px]">PAC</span>
-                        }
-                        label={label}
-                        labelClasses="!text-gray-100"
-                        rightIcon={actionButton}
-                    />
-                </div>
-            )}
+            {/* {(!isFromPac || selectItems.length > 1) && ( */}
+            <div className="border-t border-gray-900 py-sp5">
+                <TextField
+                    type={inputType}
+                    value={value}
+                    onChange={onChange}
+                    helperText={helperText}
+                    placeholder={placeholder}
+                    leftIcon={
+                        leading ?? <span className="min-w-[54px]">PAC</span>
+                    }
+                    label={label}
+                    labelClasses="!text-gray-100"
+                    rightIcon={actionButton}
+                />
+                {errorText && (
+                    <p className="caption text-error animate-fade-up transition-all duration-700 pt-sp2">
+                        {errorText}
+                    </p>
+                )}
+            </div>
+            {/* )} */}
         </div>
     );
 }
