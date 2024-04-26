@@ -28,14 +28,16 @@ export default function BridgeButton({ disabled }: { disabled: boolean }) {
         if (!transferTo) return setTransferToError("This field is required!");
         if (!transferFrom)
             return setTransferFromError("This field is required!");
-        if (pactusValidator(transferTo.toLocaleString())) {
-            writeContract({
-                abi,
-                address: networks[network].contractAddress,
-                functionName: "bridge",
-                args: [transferTo, num.toString()],
-            });
+        if (!pactusValidator(transferTo.toLocaleString())) {
+            return setTransferToError("Value not valid!");
         }
+
+        writeContract({
+            abi,
+            address: networks[network].contractAddress,
+            functionName: "bridge",
+            args: [transferTo, num.toString()],
+        });
     };
 
     return (

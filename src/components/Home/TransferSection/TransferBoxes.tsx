@@ -50,6 +50,10 @@ export default function TransferBoxes({
 
     const handleToggle = () => {
         setIsFromPac(!isFromPac);
+        setTransferToError("");
+        setTransferFromError("");
+        setTransferFrom("");
+        setTransferTo("");
         setAnimationKey(prevKey => prevKey + 1);
     };
 
@@ -123,7 +127,7 @@ export default function TransferBoxes({
                         }
                         title="Transfer To"
                         selectItems={isFromPac ? data.companies : data.pactus}
-                        label={`Destination address in ${!isFromPac ? "Polygon" : "Pactus"} network`}
+                        label={`Destination address in ${isFromPac ? "Polygon" : "Pactus"} network`}
                         placeholder="EX: pc1zzzvlcqge523yg8re8hgnk72jsfdatncusmf6uy"
                     />
                 </div>
