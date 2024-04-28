@@ -61,6 +61,15 @@ export default function TransferBoxes({
         setTransferFrom(maxContract);
     };
 
+    let fee: number;
+
+    if (+transferFrom / 200 > 5) {
+        fee = 5;
+    } else if (+transferFrom / 200 < 1) {
+        fee = 1;
+    } else {
+        fee = +transferFrom / 200;
+    }
     return (
         <>
             <div className="space-y-sp7">
@@ -133,7 +142,10 @@ export default function TransferBoxes({
                 </div>
             </div>
             <p className={cn("body-2 text-white transition-all duration-300")}>
-                Polygon gas fee ~ 0.0017 ETH <br /> Bridge fee = 1 PAC
+                Bridge fee = {fee} PAC <br />
+                <span className="text-gray-300 mt-1">
+                    (Bridge fee in Min 1 pac and Max 5 Pac)
+                </span>
             </p>
         </>
     );
