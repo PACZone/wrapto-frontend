@@ -39,7 +39,7 @@ export default function ResultTable({ data }: ResultTableProps) {
                                         <TableHead>Transaction ID</TableHead>
                                     </TableRow>
                                 </TableHeader>
-                                {data.map((item, key) => {
+                                {data.slice(0, 10).map((item, key) => {
                                     const formattedDate = format(
                                         new Date(item.date),
                                         "dd.MM.yyyy",
