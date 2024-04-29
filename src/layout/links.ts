@@ -14,7 +14,7 @@ export const links: LinkT[] = [
     },
     {
         name: "wPAC on Polygon",
-        link: "https://www.oklink.com/amoy/token/0x56d09db604b815e4322ca825d5eb10a6a9938d92#address=0x56d09db604b815e4322ca825d5eb10a6a9938d92",
+        link: "https://amoy.polygonscan.com/token/0x56d09db604b815e4322ca825d5eb10a6a9938d92?a=0x56d09db604b815e4322ca825d5eb10a6a9938d92",
     },
     {
         name: "Pactus Lock Address",

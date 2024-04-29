@@ -138,8 +138,8 @@ export default function TransferBoxes({
                         }
                         title="Transfer To"
                         selectItems={isFromPac ? data.companies : data.pactus}
-                        label={`Destination address in ${isFromPac ? "Polygon" : "Pactus"} network`}
-                        placeholder="EX: pc1zzzvlcqge523yg8re8hgnk72jsfdatncusmf6uy"
+                        label={`Destination address in ${isFromPac ? " Amoy Testnet" : "Phoenix Testnet"} network`}
+                        placeholder={!isFromPac?"EX: tpc1zzzvlcqge523yg8re8hgnk72jsfdatncusmf6uy":"0xa6a9Def75CA1339CbE514778948A1D67D826D8AA "}
                     />
                 </div>
             </div>
