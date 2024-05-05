@@ -22,10 +22,11 @@ export default function TransferSection() {
 
     return (
         <form
+            id="transfer-section"
             onSubmit={e => {
                 e.preventDefault();
             }}
-            className="space-y-sp9 max-w-[884px] mx-auto"
+            className="space-y-sp9 max-w-[884px] mx-auto mb-[52px]"
         >
             <div className="space-y-sp5">
                 <TransferBoxes
