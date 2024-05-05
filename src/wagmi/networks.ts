@@ -22,7 +22,7 @@ export const networks : Record<string,NetworkT>={
   pac:{
     name: 'PAC',
     contractAddress:'0xex',
-    explorer:"https://pactus-phoenix1.dezh.tech/transaction/id",
+    explorer:"http://pactus-phoenix1.dezh.tech/transaction/id",
     symbol:"PAC"
   }
 }
