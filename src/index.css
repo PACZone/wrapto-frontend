@@ -94,13 +94,13 @@ html.lenis body {
 /* Typography */
 
 @layer base {
-    .title-1 {
+    .display-1 {
         @apply text-[10.25rem] leading-[190px] -tracking-tight
         /*  font-size: 96px */
         ;
     }
 
-    .title-1 {
+    .display-1 {
         @apply text-[7.75rem] leading-[160px] -tracking-tight
         /*  font-size: 124px */
         ;
