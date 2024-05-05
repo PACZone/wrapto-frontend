@@ -43,12 +43,12 @@ export default function TransferBox({
 }: TransferBoxProps) {
     const { setNetwork } = useTransferBoxContext();
     return (
-        <div className=" p-sp7 rounded-xl bg-[#0C0E0ECC] bg-opacity-80 border-[1.5px] border-gray-700 transition-all ">
-            <div className="flex items-center justify-between py-[6px] mb-sp5  ">
-                <div id="transfer-box" className="text-gray-400 body-1">
+        <div className=" py-sp7 rounded-xl bg-[#0C0E0ECC] bg-opacity-80 border-[1.5px] border-gray-700 transition-all ">
+            <div className="flex items-center justify-between py-[6px] mb-sp5 md:px-sp7 px-sp2 ">
+                <div id="transfer-box" className="text-gray-400 body-1 ">
                     {title}
                 </div>
-                <div className="animate-fade  animate-delay-[150ms]">
+                <div className="animate-fade  animate-delay-[150ms] ">
                     {selectItems.length > 1 ? (
                         <Select
                             defaultValue={selectItems[0].value ?? "pac"}
@@ -103,7 +103,7 @@ export default function TransferBox({
                 </div>
             </div>
             {/* {(!isFromPac || selectItems.length > 1) && ( */}
-            <div className="border-t border-gray-900 py-sp5">
+            <div className="border-t border-gray-900 py-sp5 md:px-sp7 px-sp2">
                 <TextField
                     type={inputType}
                     value={value}

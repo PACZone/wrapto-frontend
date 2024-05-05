@@ -1,11 +1,13 @@
-<svg width="55" height="54" viewBox="0 0 55 54" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M1.42969 0.221161V53.3017" stroke="white" stroke-width="1.33261"/>
-<path d="M15.1758 1.83759L1.43657 53.1098" stroke="white" stroke-width="1.33261"/>
-<path d="M28.0684 7.00146L1.52809 52.9712" stroke="white" stroke-width="1.33261"/>
-<path d="M39.1992 15.2837L1.66491 52.818" stroke="white" stroke-width="1.33261"/>
-<path d="M39.1621 15.253L1.62914 52.7873" stroke="white" stroke-width="1.33261"/>
-<path d="M47.7383 26.1178L1.76988 52.6581" stroke="white" stroke-width="1.33261"/>
-<path d="M53.207 38.8868L1.93485 52.6247" stroke="white" stroke-width="1.33261"/>
-<path d="M54.9531 52.6354H1.87259" stroke="white" stroke-width="1.33261"/>
-<path d="M1.87245 -3.05176e-05V13.2701C1.87245 35.2568 19.6962 53.0806 41.683 53.0806H54.9531" stroke="white" stroke-width="1.33261"/>
+<svg width="484" height="227" viewBox="0 0 484 227" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    path {
+      stroke: black;
+    }
+    @media (prefers-color-scheme: dark) {
+      path {
+        stroke: white;
+      }
+    }
+  </style>
+<path d="M4 223H484M4 223L424 123M4 223L384 63M4 223L304 3M4 223L204 3M4 223L104 23M4 223L44 43M4 223V63"  stroke-width="7"/>
 </svg>
