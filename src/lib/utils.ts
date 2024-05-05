@@ -33,5 +33,16 @@ export const handleCopy = (text: string) => {
     export const polygonValidator=(value:string)=>{
     return    ((/^(0x)?[0-9a-fA-F]{40}$/.test(value))) 
   }
+export const handleFee =(value:number)=>{
+      let fee: number;
 
+    if (value / 200 > 5) {
+        fee = 5;
+    } else if (value / 200 < 1) {
+        fee = 1;
+    } else {
+        fee = value / 200;
+    }
+    return fee
+}
 

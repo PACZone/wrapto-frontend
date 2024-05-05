@@ -25,11 +25,16 @@ export default function BridgeButton({ disabled }: { disabled: boolean }) {
 
     const handleBridge = () => {
         const num = transferFrom ? +transferFrom * 10 ** 9 : 0;
+        if (!Number.isInteger(num))
+            return setTransferFromError(
+                "Decimal value is too large. Please enter a smaller number.",
+            );
+
         if (!transferTo) return setTransferToError("This field is required!");
         if (!transferFrom)
             return setTransferFromError("This field is required!");
         if (!pactusValidator(transferTo.toLocaleString())) {
-            return setTransferToError("Value not valid!");
+            return setTransferToError("Value is not valid!");
         }
 
         writeContract({

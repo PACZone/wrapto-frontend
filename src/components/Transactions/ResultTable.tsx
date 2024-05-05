@@ -67,6 +67,8 @@ export default function ResultTable({ data }: ResultTableProps) {
                                                         <img
                                                             src={srcFrom}
                                                             alt={chainFrom}
+                                                            width={36}
+                                                            height={36}
                                                         />
                                                         <div>
                                                             <p className="body-1 text-white truncate max-w-[140px]">
@@ -81,6 +83,8 @@ export default function ResultTable({ data }: ResultTableProps) {
                                                         <img
                                                             src={srcTo}
                                                             alt={chainTo}
+                                                            width={36}
+                                                            height={36}
                                                         />
                                                         <div>
                                                             <p className="body-1 text-white">

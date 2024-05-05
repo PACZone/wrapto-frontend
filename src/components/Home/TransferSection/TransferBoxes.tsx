@@ -3,7 +3,7 @@ import TransferBox from "../TransferBox";
 import { useReadContract } from "wagmi";
 import { abi } from "./abi";
 import { ContractAddressT, networks } from "wagmi/networks";
-import { cn, unDecimal } from "lib/utils";
+import { cn, handleFee, unDecimal } from "lib/utils";
 import { Button } from "components/shared/Button";
 import data from "../data.json";
 import { useTransferBoxContext } from "context/TransferBoxContext";
@@ -47,7 +47,6 @@ export default function TransferBoxes({
             setTransferTo(text);
         });
     };
-
     const handleToggle = () => {
         setIsFromPac(!isFromPac);
         setTransferToError("");
@@ -61,15 +60,7 @@ export default function TransferBoxes({
         setTransferFrom(maxContract);
     };
 
-    let fee: number;
-
-    if (+transferFrom / 200 > 5) {
-        fee = 5;
-    } else if (+transferFrom / 200 < 1) {
-        fee = 1;
-    } else {
-        fee = +transferFrom / 200;
-    }
+    const fee = handleFee(+transferFrom);
     return (
         <>
             <div className="space-y-sp7">
@@ -81,6 +72,14 @@ export default function TransferBoxes({
                             const num = isNaN(e.target.valueAsNumber)
                                 ? undefined
                                 : e.target.valueAsNumber;
+                            if (num && !isFromPac) {
+                                if (num > maxContract || num > 24000000) {
+                                    return setTransferFromError(
+                                        "Burn amount exceeds balance",
+                                    );
+                                }
+                            }
+
                             setTransferFromError("");
                             setTransferFrom(Number(num));
                         }}
@@ -139,7 +138,11 @@ export default function TransferBoxes({
                         title="Transfer To"
                         selectItems={isFromPac ? data.companies : data.pactus}
                         label={`Destination address in ${isFromPac ? " Amoy Testnet" : "Phoenix Testnet"} network`}
-                        placeholder={!isFromPac?"EX: tpc1zzzvlcqge523yg8re8hgnk72jsfdatncusmf6uy":"0xa6a9Def75CA1339CbE514778948A1D67D826D8AA "}
+                        placeholder={
+                            !isFromPac
+                                ? "EX: tpc1zzzvlcqge523yg8re8hgnk72jsfdatncusmf6uy"
+                                : "0xa6a9Def75CA1339CbE514778948A1D67D826D8AA "
+                        }
                     />
                 </div>
             </div>

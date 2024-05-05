@@ -9,3 +9,5 @@ export * from "./CopyIcon";
 export * from "./SearchIcon";
 export * from "./ArrowTopRightOnSquare";
 export * from "./BurgerIcon";
+export * from "./DiscordIcon";
+export * from "./GithubIcon";
