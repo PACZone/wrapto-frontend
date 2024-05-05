@@ -2,6 +2,7 @@ import { getTransactions } from "api/services/Transaction";
 import { ArrowsUpDown, ArrowTopRightOnSquare } from "assets/icons";
 import Spinner from "components/shared/Spinner";
 import { companiesLogo } from "components/Transactions/companiesLogo";
+import Reveal from "HOC/Reveal";
 import { formatNumber } from "lib/utils";
 import { useEffect, useState } from "react";
 import { TransactionT } from "types/Transactions";
@@ -26,9 +27,11 @@ export default function RecentlyBridge() {
 
     return (
         <div className="pb-sp7 pt-sp9 my-sp11 ">
-            <h3 className="grid content-center heading-6 mb-[35px] text-center h-[72px] align-middle">
-                RecentlyBridge
-            </h3>
+            <div className="grid content-center heading-6 mb-[35px] text-center h-[72px] align-middle">
+                <Reveal>
+                    <h3>RecentlyBridge</h3>
+                </Reveal>
+            </div>
             {isLoading ? (
                 <div className="flex py-sp11  justify-center">
                     <Spinner />

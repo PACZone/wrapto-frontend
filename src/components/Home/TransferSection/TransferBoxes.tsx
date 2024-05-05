@@ -72,7 +72,7 @@ export default function TransferBoxes({
                             const num = isNaN(e.target.valueAsNumber)
                                 ? undefined
                                 : e.target.valueAsNumber;
-                            if (num) {
+                            if (num && !isFromPac) {
                                 if (num > maxContract || num > 24000000) {
                                     return setTransferFromError(
                                         "Burn amount exceeds balance",

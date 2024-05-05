@@ -1,6 +1,6 @@
 import { Link as ReactRouteLink } from "react-router-dom";
 import { BurgerIcon, CloseIcon, EllipseIcon } from "assets/icons";
-import { links } from "./links";
+import { communityLinks, CommunityLinksT, links } from "./links.tsx";
 import { ConnectButton } from "components/shared/ConnectButton";
 import {
     Sheet,
@@ -14,6 +14,9 @@ import Logo from "assets/svg/logo.svg";
 import { useState } from "react";
 
 export default function BurgerMenu() {
+    
+    const fullLinks = communityLinks.concat(links as CommunityLinksT[]);
+
     const [open, setOpen] = useState(false);
     return (
         <div className="flex justify-between items-center lg:hidden">
@@ -26,7 +29,7 @@ export default function BurgerMenu() {
                 <SheetTrigger>
                     <BurgerIcon />
                 </SheetTrigger>
-                <SheetContent>
+                <SheetContent side="left">
                     <SheetHeader className="flex flex-row justify-between items-center">
                         <SheetClose>
                             <CloseIcon />
@@ -45,7 +48,8 @@ export default function BurgerMenu() {
                     </SheetHeader>
                     <div className="py-sp9 px-sp5">
                         <ul className=" gap-sp5 flex flex-col ">
-                            {links.map((link, key) => (
+                   
+                            {fullLinks.map((link, key) => (
                                 <li
                                     onClick={() => setOpen(false)}
                                     className=""
@@ -61,7 +65,7 @@ export default function BurgerMenu() {
                                         className="body-1 py-[10px]"
                                         variant="primary"
                                     >
-                                        {link.name}
+                                        {link.title}
                                     </Link>
                                 </li>
                             ))}
