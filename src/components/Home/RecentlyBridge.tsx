@@ -1,5 +1,5 @@
 import { getTransactions } from "api/services/Transaction";
-import { ArrowsUpDown, ArrowTopRightOnSquare } from "assets/icons";
+import { ArrowRightIcon, ArrowTopRightOnSquare } from "assets/icons";
 import Spinner from "components/shared/Spinner";
 import { companiesLogo } from "components/Transactions/companiesLogo";
 import Reveal from "HOC/Reveal";
@@ -47,14 +47,14 @@ export default function RecentlyBridge() {
                                 key={key}
                                 className="flex  h-[72px] items-center  px-sp5  md:px-sp7"
                             >
-                                <div className=" flex gap-sp5 items-center w-full md:grow ">
+                                <div className=" flex gap-sp5 items-center  grow-[1.2] ">
                                     <img
                                         src={srcFrom}
                                         alt={chainFrom}
                                         width={24}
                                         height={24}
                                     />
-                                    <ArrowsUpDown className="rotate-90 text-secondary size-sp7" />
+                                    <ArrowRightIcon className="text-secondary size-sp7" />
                                     <img
                                         src={srcTo}
                                         alt={chainTo}
@@ -63,11 +63,13 @@ export default function RecentlyBridge() {
                                     />
                                 </div>
 
-                                <div className=" w-full md:max-w-[147px] text-center">
-                                    {formatNumber(item.amount)}
+                                <div className=" grow-[1.2] ">
+                                    <span className="px-6 body-1">
+                                        {formatNumber(item.amount)} PAC
+                                    </span>
                                 </div>
 
-                                <div className="md:w-full md:max-w-[157px] ">
+                                <div className=" grow-[.2] ">
                                     <a
                                         className="flex gap-sp1 text-secondary group  justify-center"
                                         href={`${explorer}/${item.tx_id}`}

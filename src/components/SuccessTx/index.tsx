@@ -22,9 +22,9 @@ export default function SuccessTx() {
 
                     <h6 className="title-1 bold">Transaction Was Successful</h6>
 
-                    <p className="text-gray-200">
-                        Dear user, if your Destination address on the Polygon
-                        network is incorrect.
+                    <p className="text-gray-200 max-w-[347px]">
+                        Your transaction successfully sent, it will be processed
+                        if everything is correct
                     </p>
                 </div>
                 <div className="w-full space-y-2 pb-[10px]">
