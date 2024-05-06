@@ -31,7 +31,7 @@ export function Header() {
                                             className={"text-primary"}
                                         />
                                     </span>
-                                    Item One
+                                    Community
                                 </NavigationMenuTrigger>
                                 <NavigationMenuContent>
                                     {communityLinks.map((link, key) => (

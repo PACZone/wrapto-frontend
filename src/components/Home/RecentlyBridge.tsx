@@ -27,9 +27,9 @@ export default function RecentlyBridge() {
 
     return (
         <div className="pb-sp7 pt-sp9 my-sp11 ">
-            <div className="grid content-center heading-6 mb-[35px] text-center h-[72px] align-middle">
+            <div className="flex justify-center items-center mb-[35px] text-center h-[72px] align-middle">
                 <Reveal>
-                    <h3>RecentlyBridge</h3>
+                    <h3 className="md:heading-6 title-1  ">RecentlyBridge</h3>
                 </Reveal>
             </div>
             {isLoading ? (
