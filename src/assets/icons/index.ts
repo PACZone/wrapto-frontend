@@ -11,3 +11,4 @@ export * from "./ArrowTopRightOnSquare";
 export * from "./BurgerIcon";
 export * from "./DiscordIcon";
 export * from "./GithubIcon";
+export * from "./ArrowRightIcon";
