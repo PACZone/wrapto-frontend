@@ -27,6 +27,7 @@ type TransferBoxProps = {
     label?: string;
     leading?: string | boolean;
     errorText?: string;
+    defaultValue?: string | number;
 };
 export default function TransferBox({
     onChange,
@@ -39,9 +40,11 @@ export default function TransferBox({
     value,
     inputType,
     errorText,
+    defaultValue,
     leading = false,
 }: TransferBoxProps) {
     const { setNetwork } = useTransferBoxContext();
+    console.log(value);
     return (
         <div className=" py-sp7 rounded-xl bg-[#0C0E0ECC] bg-opacity-80 border-[1.5px] border-gray-700 transition-all ">
             <div className="flex items-center justify-between py-[6px] mb-sp5 md:px-sp7 px-sp2 ">
@@ -106,7 +109,8 @@ export default function TransferBox({
             <div className="border-t border-gray-900 py-sp5 md:px-sp7 px-sp2">
                 <TextField
                     type={inputType}
-                    value={value}
+                    defaultValue={defaultValue}
+                    value={value || ""}
                     onChange={onChange}
                     helperText={helperText}
                     placeholder={placeholder}
