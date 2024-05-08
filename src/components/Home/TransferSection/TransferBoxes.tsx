@@ -7,6 +7,7 @@ import { cn, handleFee, unDecimal } from "lib/utils";
 import { Button } from "components/shared/Button";
 import data from "../data.json";
 import { useTransferBoxContext } from "context/TransferBoxContext";
+import { useEffect } from "react";
 
 type TransferBoxesProps = {
     address?: ContractAddressT;
@@ -33,13 +34,16 @@ export default function TransferBoxes({
         setTransferFromError,
     } = useTransferBoxContext();
 
+    useEffect(() => {
+        isFromPac && address && setTransferTo(address.toString());
+    }, [isFromPac]);
+
     const { data: contractData } = useReadContract({
         abi,
         address: networks[network].contractAddress,
         functionName: "balanceOf",
         args: [address],
     });
-
     const maxContract = contractData ? unDecimal(Number(contractData)) : 0;
 
     const handlePaste = async () => {
@@ -59,8 +63,8 @@ export default function TransferBoxes({
     const handleMax = () => {
         setTransferFrom(maxContract);
     };
-
     const fee = handleFee(+transferFrom);
+    
     return (
         <>
             <div className="space-y-sp7">
@@ -119,6 +123,9 @@ export default function TransferBoxes({
                 </div>
                 <div>
                     <TransferBox
+                        defaultValue={
+                            isFromPac ? address?.toString() : undefined
+                        }
                         errorText={transferToError}
                         key={animationKey + 1}
                         onChange={e => {
