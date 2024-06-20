@@ -74,7 +74,7 @@ export default function Transactions() {
                                 </span>
                             </>
                         ) : (
-                            "All Recently Transaction"
+                            "All Recent Transaction"
                         )}
                     </h4>
                     {searchQuery && (
