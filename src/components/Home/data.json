@@ -1,17 +1,17 @@
 {
     "pactus": [{
-        "title": "Phoenix Testnet",
+        "title": "Pactus",
         "icon": "/companies/pactus.svg",
-        "value": "Pac"
+        "value": "PAC"
     }],
     "companies": [{
-            "value": "amoy",
-            "title": "Amoy Testnet",
+            "value": "Polygon",
+            "title": "Polygon",
             "icon": "/companies/polygon.svg"
         },
         {
-            "title": "Phoenix Testnet",
-            "value": "Pac",
+            "title": "Pactus",
+            "value": "PAC",
             "icon": "/companies/pactus.svg"
         }
     ]
