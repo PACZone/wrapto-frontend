@@ -147,8 +147,8 @@ export default function TransferBoxes({
                         label={`Destination address in ${isFromPac ? " Amoy Testnet" : "Phoenix Testnet"} network`}
                         placeholder={
                             !isFromPac
-                                ? "EX: tpc1zzzvlcqge523yg8re8hgnk72jsfdatncusmf6uy"
-                                : "0xa6a9Def75CA1339CbE514778948A1D67D826D8AA "
+                                ? "Example: pc1zzzvlcqge523yg8re8hgnk72jsfdatncusmf6uy"
+                                : "Example: 0xa6a9Def75CA1339CbE514778948A1D67D826D8AA "
                         }
                     />
                 </div>
