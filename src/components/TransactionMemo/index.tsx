@@ -11,7 +11,7 @@ export default function TransactionMemo() {
     const [searchParams] = useSearchParams();
     const transferTo = searchParams.get("transferTo");
     const amount = searchParams.get("amount");
-    const PACTUS_WALLET = "tpc1zlymfcuxlgvvuud2q4zw0scllqn74d2f90hld6w";
+    const PACTUS_WALLET = "pc1zqyxjatqfhaj3arc727alwl4sa3z8lv2m730eh2";
     return (
         <motion.section
             initial={{ opacity: 0, y: 100 }}
