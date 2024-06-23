@@ -13,7 +13,7 @@ export type CommunityLinksT = {
 export const links: LinkT[] = [
     {
         title: "wPAC on Polygon",
-        link: "https://polygonscan.com/address/0x2f77E0afAEE06970Bf860B8267b5aFECFFF6F216",
+        link: "https://polygonscan.com/token/0x2f77E0afAEE06970Bf860B8267b5aFECFFF6F216",
     },
     {
         title: "Pactus lock address",
