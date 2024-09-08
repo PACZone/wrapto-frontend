@@ -41,7 +41,7 @@ export const ConnectButton = <T extends keyof JSX.IntrinsicElements>({
                 // (!authenticationStatus ||
                 //     authenticationStatus === "authenticated");
                 // if (account) setAccount && setAccount(account);
-            
+
                 return (
                     <div
                         {...(!ready && {

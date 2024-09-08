@@ -1,4 +1,3 @@
-
 import { IconProps } from "types/iconProps";
 
 export function GithubIcon({ className }: IconProps) {

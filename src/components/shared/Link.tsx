@@ -36,7 +36,6 @@ export const ellipseVariants = cva("", {
     },
 });
 
-
 export interface LinksProps
     extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
         VariantProps<typeof linkVariants> {

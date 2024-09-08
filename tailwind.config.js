@@ -1,6 +1,5 @@
-import tailwindcssAnimated from 'tailwindcss-animated';
-import tailwindcssAnimate from 'tailwindcss-animate';
-
+import tailwindcssAnimated from "tailwindcss-animated";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -53,8 +52,8 @@ export default {
                     900: "var(--gray-900)",
                     950: "var(--gray-950)",
                 },
-                error: 'var(--error)',
-                danger: 'var(--danger)'
+                error: "var(--error)",
+                danger: "var(--danger)",
             },
         },
         fontFamily: {
@@ -73,9 +72,7 @@ export default {
     plugins: [
         tailwindcssAnimated,
         tailwindcssAnimate,
-        function ({
-            addComponents
-        }) {
+        function ({ addComponents }) {
             addComponents({
                 ".container": {
                     maxWidth: "100%",

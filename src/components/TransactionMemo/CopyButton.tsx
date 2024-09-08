@@ -32,7 +32,7 @@ export default function CopyButton({ text }: { text: string }) {
                         <span>Copy</span>
                     </Button>
                 </TooltipTrigger>
-                <TooltipContent >
+                <TooltipContent>
                     <TooltipArrow className="TooltipArrow" />
                     <p className="text-white">Copied!</p>
                 </TooltipContent>

@@ -25,7 +25,10 @@ const Checkbox = React.forwardRef<
                 <Check className="size-sp5" />
             </CheckboxPrimitive.Indicator>
         </CheckboxPrimitive.Root>
-        <label className="text-gray-50 cursor-pointer font-thin" htmlFor={props.id}>
+        <label
+            className="text-gray-50 cursor-pointer font-thin"
+            htmlFor={props.id}
+        >
             {label}
         </label>
     </div>

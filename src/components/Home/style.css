@@ -1,5 +1,4 @@
 .spin {
-
     animation: ring-spin 120s linear infinite;
     transform: translateX(-50%);
     transform: translateY(-50%);
@@ -14,7 +13,6 @@
         transform: rotate(360deg);
     }
 }
-
 
 .arrow-scroll-down {
     position: absolute;
@@ -39,10 +37,8 @@
     -moz-animation: fade_move_down 2s ease-in-out infinite;
     animation: fade_move_down 2s ease-in-out infinite;
 
-    --x-position:-7px;
-
+    --x-position: -7px;
 }
-
 
 /*animated scroll arrow animation*/
 @-webkit-keyframes fade_move_down {

@@ -64,7 +64,7 @@ export default function TransferBoxes({
         setTransferFrom(maxContract);
     };
     const fee = handleFee(+transferFrom);
-    
+
     return (
         <>
             <div className="space-y-sp7">

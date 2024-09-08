@@ -1,6 +1,6 @@
-import { IconProps } from 'types/iconProps';
+import { IconProps } from "types/iconProps";
 
-export  function ArrowsUpDown({ className }: IconProps) {
+export function ArrowsUpDown({ className }: IconProps) {
     return (
         <svg
             className={className}

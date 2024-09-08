@@ -14,7 +14,6 @@ import Logo from "assets/svg/logo.svg";
 import { useState } from "react";
 
 export default function BurgerMenu() {
-    
     const fullLinks = communityLinks.concat(links as CommunityLinksT[]);
 
     const [open, setOpen] = useState(false);
@@ -48,7 +47,6 @@ export default function BurgerMenu() {
                     </SheetHeader>
                     <div className="py-sp9 px-sp5">
                         <ul className=" gap-sp5 flex flex-col ">
-                   
                             {fullLinks.map((link, key) => (
                                 <li
                                     onClick={() => setOpen(false)}

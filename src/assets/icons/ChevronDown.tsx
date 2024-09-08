@@ -1,9 +1,9 @@
-import { IconProps } from 'types/iconProps';
+import { IconProps } from "types/iconProps";
 
-export  function ChevronDown({ className }: IconProps) {
+export function ChevronDown({ className }: IconProps) {
     return (
         <svg
-        className={className}
+            className={className}
             width="25"
             height="24"
             viewBox="0 0 25 24"
