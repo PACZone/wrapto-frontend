@@ -7,9 +7,11 @@ import { BrowserRouter } from "react-router-dom";
 import { darkTheme, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { WagmiProvider } from "wagmi";
 
+
 import { config } from "./wagmi/wagmi.ts";
 import "./index.css";
 import "@rainbow-me/rainbowkit/styles.css";
+
 
 globalThis.Buffer = Buffer;
 
