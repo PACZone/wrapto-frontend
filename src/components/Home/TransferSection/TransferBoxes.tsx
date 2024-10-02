@@ -144,7 +144,7 @@ export default function TransferBoxes({
                         }
                         title="Transfer To"
                         selectItems={isFromPac ? data.companies : data.pactus}
-                        label={`Destination address in ${isFromPac ? " Polygon" : "Pactus"} network`}
+                        label={`Destination address in ${isFromPac ? " Amoy Testnet" : "Phoenix Testnet"} network`}
                         placeholder={
                             !isFromPac
                                 ? "Example: pc1zzzvlcqge523yg8re8hgnk72jsfdatncusmf6uy"
