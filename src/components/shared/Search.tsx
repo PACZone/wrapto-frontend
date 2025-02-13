@@ -34,7 +34,7 @@ const Search = (props: SearchProps) => {
         <TextField
             type="search"
             name="search"
-            placeholder={"Enter search..."}
+            placeholder={"Search by TX Hash / Order ID..."}
             onChange={event => searchHandler(event)}
             onKeyDown={handleKeyDown}
             rightIcon={
@@ -43,7 +43,7 @@ const Search = (props: SearchProps) => {
                 </Button>
             }
             leftIcon={<SearchIcon />}
-            helperText={error && <p className="!text-error">Enter value!</p>}
+            helperText={error && <p className="!text-error">Enter a value!</p>}
         />
     );
 };

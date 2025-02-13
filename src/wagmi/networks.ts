@@ -13,16 +13,16 @@ type NetworkT= {
 export const networks : Record<string,NetworkT>={
   amoy:{
     name: 'MATIC',
-    contractAddress:'0x56D09Db604B815E4322CA825D5EB10a6a9938d92',
-    explorer:"https://amoy.polygonscan.com/tx",
-    rpcUrl:"https://polygon-amoy.infura.io/v3/ebf2aa9568884ba0aceb39bc35377102",
-    chainId:80002,
+    contractAddress:'0x2f77E0afAEE06970Bf860B8267b5aFECFFF6F216',
+    explorer:"https://polygonscan.com/tx",
+    rpcUrl:"https://polygon-rpc.com",
+    chainId:137,
     symbol:"MATIC"
   },
   pac:{
     name: 'PAC',
-    contractAddress:'0xex',
-    explorer:"http://pactus-phoenix1.dezh.tech/transaction/id",
+    contractAddress:'0x',
+    explorer:"https://pacviewer.com/transaction",
     symbol:"PAC"
   }
 }

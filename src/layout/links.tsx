@@ -13,11 +13,11 @@ export type CommunityLinksT = {
 export const links: LinkT[] = [
     {
         title: "wPAC on Polygon",
-        link: "https://amoy.polygonscan.com/token/0x56d09db604b815e4322ca825d5eb10a6a9938d92?a=0x56d09db604b815e4322ca825d5eb10a6a9938d92",
+        link: "https://polygonscan.com/token/0x2f77E0afAEE06970Bf860B8267b5aFECFFF6F216",
     },
     {
-        title: "Pactus Lock Address",
-        link: "http://pactus-phoenix1.dezh.tech/account/address/tpc1zlymfcuxlgvvuud2q4zw0scllqn74d2f90hld6w",
+        title: "Pactus lock address",
+        link: "https://pacviewer.com/address/pc1zgp0x33hehvczq6dggs04gywfqpzl9fea5039gh",
     },
     {
         title: "Recent transactions",
@@ -33,7 +33,7 @@ export const communityLinks: CommunityLinksT[] = [
         icon: <DiscordIcon />,
     },
     {
-        title: "Github",
+        title: "GitHub",
         description: "GitHub",
         link: "https://github.com/PACZone/wrapto",
         icon: <GithubIcon />,

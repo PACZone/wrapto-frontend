@@ -29,7 +29,7 @@ export default function RecentlyBridge() {
         <div className="pb-sp7 pt-sp9 my-sp11 ">
             <div className="flex justify-center items-center mb-[35px] text-center h-[72px] align-middle">
                 <Reveal>
-                    <h3 className="md:heading-6 title-1  ">RecentlyBridge</h3>
+                    <h3 className="md:heading-6 title-1  ">Recent Bridges</h3>
                 </Reveal>
             </div>
             {isLoading ? (
@@ -88,7 +88,7 @@ export default function RecentlyBridge() {
                 </div>
             ) : (
                 <div className="flex justify-center py-sp11 heading-6">
-                    No data found!
+                    No data was found!
                 </div>
             )}
         </div>
