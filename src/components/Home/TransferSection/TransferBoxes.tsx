@@ -64,7 +64,7 @@ export default function TransferBoxes({
         setTransferFrom(maxContract);
     };
     const fee = handleFee(+transferFrom);
-    
+
     return (
         <>
             <div className="space-y-sp7">
@@ -144,7 +144,7 @@ export default function TransferBoxes({
                         }
                         title="Transfer To"
                         selectItems={isFromPac ? data.companies : data.pactus}
-                        label={`Destination address in ${isFromPac ? " Amoy Testnet" : "Pactus mainnet"} network`}
+                        label={`Destination address in ${isFromPac ? " Polygon mainnet" : "Pactus mainnet"} network`}
                         placeholder={
                             !isFromPac
                                 ? "Example: pc1zzzvlcqge523yg8re8hgnk72jsfdatncusmf6uy"
