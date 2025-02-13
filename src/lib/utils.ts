@@ -27,7 +27,7 @@ export const handleCopy = (text: string) => {
   };
 
   export const pactusValidator=(value:string)=>{
-    return /^(pc1z|[13])[a-zA-HJ-NP-Z0-9]{25,39}$/gm.test(value)
+    return /^(pc1[zr]|[13])[a-zA-HJ-NP-Z0-9]{25,39}$/gm.test(value)
   }
 
     export const polygonValidator=(value:string)=>{
