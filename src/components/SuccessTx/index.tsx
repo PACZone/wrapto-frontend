@@ -16,7 +16,7 @@ export default function SuccessTx() {
                     <CheckIcon className="text-secondary w-full" />
                 </span>
                 <div className="space-y-sp5 text-center">
-                    <span className="caption font-bold text-secondary">
+                    <span className="caption-1 font-bold text-secondary">
                         Grate Job!
                     </span>
 

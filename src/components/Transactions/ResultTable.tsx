@@ -75,7 +75,7 @@ export default function ResultTable({ data }: ResultTableProps) {
                                                             <p className="body-1 text-white truncate max-w-[140px]">
                                                                 {chainFrom}
                                                             </p>
-                                                            <p className="caption text-gray-300"></p>
+                                                            <p className="caption-1 text-gray-300"></p>
                                                         </div>
                                                     </div>
                                                 </TableCell>
@@ -91,7 +91,7 @@ export default function ResultTable({ data }: ResultTableProps) {
                                                             <p className="body-1 text-white">
                                                                 {chainTo}
                                                             </p>
-                                                            <p className="caption text-gray-300 truncate max-w-[140px]">
+                                                            <p className="caption-1 text-gray-300 truncate max-w-[140px]">
                                                                 {item.to}
                                                             </p>
                                                         </div>
@@ -113,7 +113,7 @@ export default function ResultTable({ data }: ResultTableProps) {
                                                         <p className="body-1 text-white">
                                                             {formattedDate}
                                                         </p>
-                                                        <p className="caption text-gray-300">
+                                                        <p className="caption-1 text-gray-300">
                                                             {formattedTime}
                                                         </p>
                                                     </div>

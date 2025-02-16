@@ -1,5 +1,5 @@
 import { Link as ReactRouteLink } from "react-router-dom";
-import { BurgerIcon, CloseIcon, EllipseIcon } from "assets/icons";
+import { BurgerIcon, CloseIcon } from "assets/icons";
 import { communityLinks, CommunityLinksT, links } from "./links.tsx";
 import { ConnectButton } from "components/shared/ConnectButton";
 import {
@@ -12,12 +12,14 @@ import {
 import Link from "components/shared/Link";
 import Logo from "assets/svg/logo.svg";
 import { useState } from "react";
+import ReScanModal from "./RescanModal.tsx";
+import { Button } from "components/shared/Button.tsx";
 
 export default function BurgerMenu() {
-    
     const fullLinks = communityLinks.concat(links as CommunityLinksT[]);
 
     const [open, setOpen] = useState(false);
+    const [reScanModalOpen, setReScanModalOpen] = useState(false);
     return (
         <div className="flex justify-between items-center lg:hidden">
             <Sheet
@@ -48,7 +50,6 @@ export default function BurgerMenu() {
                     </SheetHeader>
                     <div className="py-sp9 px-sp5">
                         <ul className=" gap-sp5 flex flex-col ">
-                   
                             {fullLinks.map((link, key) => (
                                 <li
                                     onClick={() => setOpen(false)}
@@ -70,18 +71,31 @@ export default function BurgerMenu() {
                                 </li>
                             ))}
                         </ul>
-                        <div onClick={() => setOpen(false)} className="mt-sp9">
+                        <div
+                            onClick={() => setOpen(false)}
+                            className="flex flex-col gap-sp2 items-center mt-sp9"
+                        >
+                            <Button
+                                onClick={() => setReScanModalOpen(true)}
+                                className="w-full"
+                                variant={"default"}
+                                size={"md"}
+                            >
+                                Rescan
+                            </Button>
                             <ConnectButton
+                                size={"md"}
                                 variant="secondary"
-                                variantType="link"
-                                leftIcon={
-                                    <EllipseIcon className="text-secondary" />
-                                }
+                                variantType="button"
                             />
                         </div>
                     </div>
                 </SheetContent>
             </Sheet>
+            <ReScanModal
+                onClose={() => setReScanModalOpen(false)}
+                isOpen={reScanModalOpen}
+            />
             <ReactRouteLink draggable={false} to="/">
                 <img src={Logo} alt="Logo" className="text-primary" />
             </ReactRouteLink>
