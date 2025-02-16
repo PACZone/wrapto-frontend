@@ -6,7 +6,7 @@ import { ReactNode } from "react";
 
 type ComponentProps<T extends keyof JSX.IntrinsicElements> = {
     variant?: "secondary" | null | undefined;
-    size?: "default" | "lg" | null | undefined;
+    size?: "default" | "lg" | "md" | null | undefined;
     className?: string;
     variantType?: "button" | "link";
     leftIcon?: ReactNode;
@@ -41,7 +41,7 @@ export const ConnectButton = <T extends keyof JSX.IntrinsicElements>({
                 // (!authenticationStatus ||
                 //     authenticationStatus === "authenticated");
                 // if (account) setAccount && setAccount(account);
-            
+
                 return (
                     <div
                         {...(!ready && {
@@ -52,18 +52,19 @@ export const ConnectButton = <T extends keyof JSX.IntrinsicElements>({
                                 userSelect: "none",
                             },
                         })}
+                        className="w-full"
                     >
                         {(() => {
                             if (!connected) {
                                 return (
                                     <button
                                         className={cn(
-                                            "w-full ",
                                             styleVariants({
                                                 variant,
                                                 size,
                                                 className,
                                             }),
+                                            "!w-full",
                                         )}
                                         onClick={openConnectModal}
                                         type="button"
@@ -77,12 +78,12 @@ export const ConnectButton = <T extends keyof JSX.IntrinsicElements>({
                                 return (
                                     <button
                                         className={cn(
-                                            "w-full",
                                             styleVariants({
                                                 variant,
                                                 size,
                                                 className,
                                             }),
+                                            "!w-full",
                                         )}
                                         onClick={openChainModal}
                                         type="button"

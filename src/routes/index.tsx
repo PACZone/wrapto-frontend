@@ -5,6 +5,7 @@ import {
     TransactionsPage,
     NotFound,
 } from "pages";
+import RescanResult from "pages/RescanResult";
 
 export const routes = {
     Home: {
@@ -15,6 +16,10 @@ export const routes = {
     Success: {
         path: "/tx/success/:hash",
         element: <SuccessPage />,
+    },
+    RescanResult: {
+        path: "/rescan-result",
+        element: <RescanResult />,
     },
     TransactionMemo: {
         path: "/transactionMemo",

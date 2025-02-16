@@ -45,6 +45,7 @@ export default function TransferBoxes({
         args: [address],
     });
     const maxContract = contractData ? unDecimal(Number(contractData)) : 0;
+    const fee = handleFee(+transferFrom);
 
     const handlePaste = async () => {
         await navigator.clipboard.readText().then(text => {
@@ -61,9 +62,8 @@ export default function TransferBoxes({
     };
 
     const handleMax = () => {
-        setTransferFrom(maxContract);
+        setTransferFrom(maxContract - fee);
     };
-    const fee = handleFee(+transferFrom);
 
     return (
         <>

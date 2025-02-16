@@ -122,7 +122,7 @@ export default function TransferBox({
                     rightIcon={actionButton}
                 />
                 {errorText && (
-                    <p className="caption text-error animate-fade-up transition-all duration-700 pt-sp2">
+                    <p className="caption-1 text-error animate-fade-up transition-all duration-700 pt-sp2">
                         {errorText}
                     </p>
                 )}

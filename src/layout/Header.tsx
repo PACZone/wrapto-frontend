@@ -13,8 +13,12 @@ import {
     NavigationMenuList,
     NavigationMenuTrigger,
 } from "components/shared/NavigationMenu.tsx";
+import ReScanModal from "./RescanModal.tsx";
+import { Button } from "components/shared/Button.tsx";
+import { useState } from "react";
 
 export function Header() {
+    const [reScanModalOpen, setReScanModalOpen] = useState(false);
     return (
         <header className="container mx-auto py-sp6 px-sp5 lg:px-10  lg:py-sp6 border-b border-gray-normal font-light">
             <nav className="lg:flex hidden justify-between items-center">
@@ -76,11 +80,26 @@ export function Header() {
                         </li>
                     ))}
                 </ul>
-                <ConnectButton
-                    variant="secondary"
-                    variantType="link"
-                    leftIcon={<EllipseIcon className="text-secondary" />}
-                />
+                <div className="flex gap-sp2 items-center">
+                    <ReScanModal
+                        onClose={() => setReScanModalOpen(false)}
+                        isOpen={reScanModalOpen}
+                    />
+
+                    <Button
+                        onClick={() => setReScanModalOpen(true)}
+                        className="w-full"
+                        variant={"default"}
+                        size={"md"}
+                    >
+                        Rescan
+                    </Button>
+                    <ConnectButton
+                        size={"md"}
+                        variant="secondary"
+                        variantType="button"
+                    />
+                </div>
             </nav>
             <BurgerMenu />
         </header>
