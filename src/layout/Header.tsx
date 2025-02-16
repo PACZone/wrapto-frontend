@@ -21,7 +21,7 @@ export function Header() {
     const [reScanModalOpen, setReScanModalOpen] = useState(false);
     return (
         <header className="container mx-auto py-sp6 px-sp5 lg:px-10  lg:py-sp6 border-b border-gray-normal font-light">
-            <nav className="lg:flex hidden justify-between items-center">
+            <nav className="xl:flex hidden justify-between items-center">
                 <ReactRouterLink draggable={false} to="/">
                     <img src={Logo} alt="Logo" className="text-primary" />
                 </ReactRouterLink>
