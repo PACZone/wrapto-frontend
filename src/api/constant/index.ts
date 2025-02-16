@@ -13,7 +13,7 @@ BASE_INSTANCE.interceptors.request.use(
     },
     function err(error) {
         // Do something with request error
-        if (error.response?.data?.error === (500 || '500'))
+        if (error.response?.data?.error === (500) || error.response?.data?.error ===  '500')
             console.error(error.response?.data?.error);
         return Promise.reject(error);
     },
