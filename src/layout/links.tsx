@@ -34,8 +34,14 @@ export const communityLinks: CommunityLinksT[] = [
     },
     {
         title: "GitHub",
-        description: "GitHub",
+        description: "Our source code",
         link: "https://github.com/PACZone/wrapto",
         icon: <GithubIcon />,
     },
+    {
+        title: "Nostr",
+        description: "Dezh on the Nostr!",
+        link: "https://njump.me/dezh.tech",
+        icon: <GithubIcon />,
+    }
 ];
