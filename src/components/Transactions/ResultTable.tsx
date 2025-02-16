@@ -34,6 +34,7 @@ export default function ResultTable({ data }: ResultTableProps) {
                                         <TableHead>Destination Chain</TableHead>
                                         <TableHead>Amount</TableHead>
                                         <TableHead>Fee</TableHead>
+                                        <TableHead>Id</TableHead>
                                         <TableHead>Time</TableHead>
                                         <TableHead>Status</TableHead>
                                         <TableHead>Transaction ID</TableHead>
@@ -105,6 +106,7 @@ export default function ResultTable({ data }: ResultTableProps) {
                                                     {formatNumber(item.fee)}
                                                 </TableCell>
 
+                                                <TableCell>{item.id}</TableCell>
                                                 <TableCell>
                                                     {" "}
                                                     <div>

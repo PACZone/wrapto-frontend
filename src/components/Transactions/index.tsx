@@ -49,6 +49,8 @@ export default function Transactions() {
         };
         searchQuery ? fetchBySearch(searchQuery) : fetch();
     }, [reFetch]);
+    
+    console.log(data);
 
     const handleSearch = async (value: string) => {
         // Here, you can access the search value when Enter is pressed

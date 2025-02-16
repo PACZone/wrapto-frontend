@@ -36,7 +36,9 @@ export default function TransactionMemo() {
                     </label>
                     <div className="border border-gray-900 rounded-xl p-sp5 text-gray-400">
                         <p className=" min-h-[114px]">{transferTo}@POLYGON</p>
-                        <CopyButton text={`${transferTo}@POLYGON` ?? ""} />
+                        <CopyButton
+                            text={transferTo ? `${transferTo}@POLYGON` : ""}
+                        />
                     </div>
                 </div>
                 <TextField

@@ -8,6 +8,11 @@ export const formatNumber = (num:number)=>{
   return  new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 6 }).format(num)
 }
 
+export const formatNumberWithCommas = (num: number): string => {
+  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
+
+
 export function decimal(num: number): number {
   return Number(num) * Number(1e9)
 }
