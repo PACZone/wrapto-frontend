@@ -64,7 +64,7 @@ const ReScanModal = ({
                 <main className="flex flex-col gap-sp8">
                     <DialogDescription>
                         If you have missed or failed bridge, put your
-                        transaction hash here and retry for Bridge. If it was
+                        bridge id here and retry for Bridge. If it was
                         unsuccessful again, contact us at{" "}
                         <a
                             href="mailto:hi@dezh.tech"
@@ -82,8 +82,8 @@ const ReScanModal = ({
                         <TextField
                             onChange={e => setHashValue(e.target.value)}
                             className="bg-background"
-                            label="Enter your transaction hash"
-                            placeholder="PAC"
+                            label="Enter your bridge id"
+                            placeholder="Example: 4vCVIuUyHO"
                         />
                         <Button
                             disabled={!hashValue || isLoading}
