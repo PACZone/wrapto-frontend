@@ -17,7 +17,7 @@ export const links: LinkT[] = [
     },
     {
         title: "Pactus lock address",
-        link: "https://pacviewer.com/address/pc1zgp0x33hehvczq6dggs04gywfqpzl9fea5039gh",
+        link: "https://pacviewer.com/address/pc1zqyxjatqfhaj3arc727alwl4sa3z8lv2m730eh2",
     },
     {
         title: "Recent transactions",
