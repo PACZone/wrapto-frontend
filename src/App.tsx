@@ -6,14 +6,12 @@ import Footer from "layout/Footer";
 import ScrollToTop from "components/ScrollToTop";
 // import Banner from "components/Banner";
 import "./App.css";
-import WraptoLoading from "components/WraptoLoading";
 
 export default function App() {
     return (
         <ReactLenis root>
             <ScrollToTop />
             <Header />
-            <WraptoLoading />
             {/* <Banner
                 title="Title for this toast"
                 description="Wrapto experienced a security breach and data loss. We kindly ask for your patience while we work to restore service and account access"
