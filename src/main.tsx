@@ -16,6 +16,11 @@ import "@rainbow-me/rainbowkit/styles.css";
 globalThis.Buffer = Buffer;
 
 const queryClient = new QueryClient();
+const loadingScreen = document.getElementById("loading-screen");
+
+if (loadingScreen) {
+  loadingScreen.style.display = "none";
+}
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
