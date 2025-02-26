@@ -1,20 +1,21 @@
-import { DiscordIcon, GithubIcon } from "assets/icons";
+import {
+    DiscordIcon,
+    GithubIcon,
+    BinanceIcon,
+    PolygonIcon,
+} from "assets/icons";
 
 type LinkT = {
     title: string;
     link: string;
 };
-export type CommunityLinksT = {
+export type NavigationLinksT = {
     title: string;
     description: string;
     link: string;
     icon: JSX.Element;
 };
 export const links: LinkT[] = [
-    {
-        title: "wPAC on Polygon",
-        link: "https://polygonscan.com/token/0x2f77E0afAEE06970Bf860B8267b5aFECFFF6F216",
-    },
     {
         title: "Pactus lock address",
         link: "https://pacviewer.com/address/pc1zqyxjatqfhaj3arc727alwl4sa3z8lv2m730eh2",
@@ -25,7 +26,7 @@ export const links: LinkT[] = [
     },
 ];
 
-export const communityLinks: CommunityLinksT[] = [
+export const communityLinks: NavigationLinksT[] = [
     {
         title: "Discord",
         description: "Join Wrapto on Discord",
@@ -38,10 +39,24 @@ export const communityLinks: CommunityLinksT[] = [
         link: "https://github.com/PACZone/wrapto",
         icon: <GithubIcon />,
     },
-    {
-        title: "Nostr",
-        description: "Dezh on the Nostr!",
-        link: "https://njump.me/dezh.tech",
-        icon: <GithubIcon />,
-    }
 ];
+export const wPACOnLinks: NavigationLinksT[] = [
+    {
+        title: "On Polygon",
+        link: "https://polygonscan.com/token/0x2f77E0afAEE06970Bf860B8267b5aFECFFF6F216",
+
+        description: "Wpac token on explorer",
+        icon: <PolygonIcon />,
+    },
+    {
+        title: "On Binance Smart Chain",
+        description: "Wpac token on explorer",
+        link: "https://bscscan.com/",
+        icon: <BinanceIcon />,
+    },
+];
+
+export const navigationLinks = {
+    community: { title: "Community", links: communityLinks },
+    wPACOn: { title: "wPAC tokens", links: wPACOnLinks },
+};
