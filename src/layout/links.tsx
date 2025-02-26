@@ -26,7 +26,7 @@ export const links: LinkT[] = [
     },
 ];
 
-export const CommunityLinksT: NavigationLinksT[] = [
+export const communityLinks: NavigationLinksT[] = [
     {
         title: "Discord",
         description: "Join Wrapto on Discord",
