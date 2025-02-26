@@ -39,32 +39,27 @@ export function Header() {
                                         {links.title}
                                     </NavigationMenuTrigger>
                                     <NavigationMenuContent>
-                                        {links.links.map((link, key) => {
-                                            console.log(link);
-                                            return (
-                                                <NavigationMenuLink
-                                                    data-lenis-prevent
-                                                    target="_blank"
-                                                    href={link.link}
-                                                    className=" gap-2 "
-                                                    key={key + link.title}
-                                                >
-                                                    <div className="flex items-center  gap-sp4  w-full">
-                                                        {link.icon}
-                                                        <div className="text-start body-1 whitespace-nowrap flex flex-col gap-[2px]">
-                                                            <span className="text-white">
-                                                                {link.title}
-                                                            </span>
-                                                            <span className="text-gray-300">
-                                                                {
-                                                                    link.description
-                                                                }
-                                                            </span>
-                                                        </div>
+                                        {links.links.map((link, key) => (
+                                            <NavigationMenuLink
+                                                data-lenis-prevent
+                                                target="_blank"
+                                                href={link.link}
+                                                className=" gap-2 "
+                                                key={key + link.title}
+                                            >
+                                                <div className="flex items-center  gap-sp4  w-full">
+                                                    {link.icon}
+                                                    <div className="text-start body-1 whitespace-nowrap flex flex-col gap-[2px]">
+                                                        <span className="text-white">
+                                                            {link.title}
+                                                        </span>
+                                                        <span className="text-gray-300">
+                                                            {link.description}
+                                                        </span>
                                                     </div>
-                                                </NavigationMenuLink>
-                                            );
-                                        })}
+                                                </div>
+                                            </NavigationMenuLink>
+                                        ))}
                                     </NavigationMenuContent>
                                 </NavigationMenuItem>
                             </NavigationMenuList>
