@@ -13,3 +13,4 @@ export * from "./DiscordIcon";
 export * from "./GithubIcon";
 export * from "./XIcon";
 export * from "./ArrowRightIcon";
+export * from "./FillInfoCircleIcon";
