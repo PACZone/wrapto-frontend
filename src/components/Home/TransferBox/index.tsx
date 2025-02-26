@@ -44,7 +44,6 @@ export default function TransferBox({
     leading = false,
 }: TransferBoxProps) {
     const { setNetwork } = useTransferBoxContext();
-    console.log(value);
     return (
         <div className=" py-sp7 rounded-xl bg-[#0C0E0ECC] bg-opacity-80 border-[1.5px] border-gray-700 transition-all ">
             <div className="flex items-center justify-between py-[6px] mb-sp5 md:px-sp7 px-sp2 ">
@@ -61,7 +60,7 @@ export default function TransferBox({
                             disabled={selectItems.length < 3}
                         >
                             <SelectGroup>
-                                <SelectTrigger className="w-[230px] truncate">
+                                <SelectTrigger className="w-fit truncate">
                                     <SelectValue
                                         className="body-2"
                                         placeholder="Select an cryptocurrency"

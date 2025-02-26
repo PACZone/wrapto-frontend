@@ -5,7 +5,7 @@ import {
     PolygonIcon,
 } from "assets/icons";
 
-type LinkT = {
+export type LinkT = {
     title: string;
     link: string;
 };
