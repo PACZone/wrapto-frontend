@@ -1,6 +1,6 @@
 import Link from "components/shared/Link";
 import { Link as ReactRouterLink } from "react-router-dom";
-import { communityLinks, links } from "./links.tsx";
+import { links, navigationLinks } from "./links.tsx";
 import Logo from "assets/svg/logo.svg";
 import { ConnectButton } from "components/shared/ConnectButton";
 import { EllipseIcon } from "assets/icons";
@@ -26,42 +26,45 @@ export function Header() {
                     <img src={Logo} alt="Logo" className="text-primary" />
                 </ReactRouterLink>
                 <ul className=" gap-sp8 flex ">
-                    <NavigationMenu>
-                        <NavigationMenuList>
-                            <NavigationMenuItem>
-                                <NavigationMenuTrigger className=" gap-sp2">
-                                    <span>
-                                        <EllipseIcon
-                                            className={"text-primary"}
-                                        />
-                                    </span>
-                                    Community
-                                </NavigationMenuTrigger>
-                                <NavigationMenuContent>
-                                    {communityLinks.map((link, key) => (
-                                        <NavigationMenuLink
-                                            target="_blank"
-                                            href={link.link}
-                                            className=" gap-2 "
-                                            key={key}
-                                        >
-                                            <div className="flex  gap-sp4  w-full">
-                                                {link.icon}
-                                                <div className="text-start body-1 whitespace-nowrap flex flex-col gap-[2px]">
-                                                    <span className="text-white">
-                                                        {link.title}
-                                                    </span>
-                                                    <span className="text-gray-300">
-                                                        {link.description}
-                                                    </span>
+                    {Object.values(navigationLinks).map((links, index) => (
+                        <NavigationMenu key={index + links.title}>
+                            <NavigationMenuList>
+                                <NavigationMenuItem>
+                                    <NavigationMenuTrigger className=" gap-sp2">
+                                        <span>
+                                            <EllipseIcon
+                                                className={"text-primary"}
+                                            />
+                                        </span>
+                                        {links.title}
+                                    </NavigationMenuTrigger>
+                                    <NavigationMenuContent>
+                                        {links.links.map((link, key) => (
+                                            <NavigationMenuLink
+                                                data-lenis-prevent
+                                                target="_blank"
+                                                href={link.link}
+                                                className=" gap-2 "
+                                                key={key + link.title}
+                                            >
+                                                <div className="flex items-center  gap-sp4  w-full">
+                                                    {link.icon}
+                                                    <div className="text-start body-1 whitespace-nowrap flex flex-col gap-[2px]">
+                                                        <span className="text-white">
+                                                            {link.title}
+                                                        </span>
+                                                        <span className="text-gray-300">
+                                                            {link.description}
+                                                        </span>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </NavigationMenuLink>
-                                    ))}
-                                </NavigationMenuContent>
-                            </NavigationMenuItem>
-                        </NavigationMenuList>
-                    </NavigationMenu>
+                                            </NavigationMenuLink>
+                                        ))}
+                                    </NavigationMenuContent>
+                                </NavigationMenuItem>
+                            </NavigationMenuList>
+                        </NavigationMenu>
+                    ))}
 
                     {links.map((link, key) => (
                         <li key={key}>

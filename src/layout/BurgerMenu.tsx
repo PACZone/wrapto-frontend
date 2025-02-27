@@ -1,6 +1,6 @@
 import { Link as ReactRouteLink } from "react-router-dom";
 import { BurgerIcon, CloseIcon } from "assets/icons";
-import { communityLinks, CommunityLinksT, links } from "./links.tsx";
+import { links, navigationLinks, LinkT } from "./links.tsx";
 import { ConnectButton } from "components/shared/ConnectButton";
 import {
     Sheet,
@@ -16,8 +16,15 @@ import ReScanModal from "./RescanModal.tsx";
 import { Button } from "components/shared/Button.tsx";
 
 export default function BurgerMenu() {
-    const fullLinks = communityLinks.concat(links as CommunityLinksT[]);
-
+    const fullLinks: LinkT[] = [
+        ...links,
+        ...Object.entries(navigationLinks).flatMap(([key, { title, links }]) =>
+            links.map(link => ({
+                ...link,
+                title: key === "wPACOn" ? `${title} ${link.title}` : link.title,
+            })),
+        ),
+    ];
     const [open, setOpen] = useState(false);
     const [reScanModalOpen, setReScanModalOpen] = useState(false);
     return (

@@ -12,5 +12,7 @@ export * from "./BurgerIcon";
 export * from "./DiscordIcon";
 export * from "./GithubIcon";
 export * from "./XIcon";
+export * from "./BinanceIcon";
+export * from "./PolygonIcon";
 export * from "./ArrowRightIcon";
 export * from "./FillInfoCircleIcon";
