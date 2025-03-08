@@ -1,10 +1,13 @@
+import ReScanModal from "./RescanModal.tsx";
 import Link from "components/shared/Link";
+import BurgerMenu from "./BurgerMenu";
+import Logo from "assets/svg/logo.svg";
+import { useState } from "react";
 import { Link as ReactRouterLink } from "react-router-dom";
 import { links, navigationLinks } from "./links.tsx";
-import Logo from "assets/svg/logo.svg";
 import { ConnectButton } from "components/shared/ConnectButton";
 import { EllipseIcon } from "assets/icons";
-import BurgerMenu from "./BurgerMenu";
+import { Button } from "components/shared/Button.tsx";
 import {
     NavigationMenu,
     NavigationMenuContent,
@@ -13,9 +16,7 @@ import {
     NavigationMenuList,
     NavigationMenuTrigger,
 } from "components/shared/NavigationMenu.tsx";
-import ReScanModal from "./RescanModal.tsx";
-import { Button } from "components/shared/Button.tsx";
-import { useState } from "react";
+
 
 export function Header() {
     const [reScanModalOpen, setReScanModalOpen] = useState(false);
