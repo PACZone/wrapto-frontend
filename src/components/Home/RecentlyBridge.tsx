@@ -1,8 +1,8 @@
+import Reveal from "HOC/Reveal";
+import Spinner from "components/shared/Spinner";
 import { getTransactions } from "api/services/Transaction";
 import { ArrowRightIcon, ArrowTopRightOnSquare } from "assets/icons";
-import Spinner from "components/shared/Spinner";
 import { companiesLogo } from "components/Transactions/companiesLogo";
-import Reveal from "HOC/Reveal";
 import { formatNumber } from "lib/utils";
 import { useEffect, useState } from "react";
 import { TransactionT } from "types/Transactions";

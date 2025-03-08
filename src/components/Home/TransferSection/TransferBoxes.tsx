@@ -103,7 +103,7 @@ export default function TransferBoxes({
                                 : undefined
                         }
                         title="Transfer From"
-                        selectItems={isFromPac ? data.pactus : data.companies}
+                        selectItems={isFromPac ? data.pactus : data.networks}
                         placeholder="0"
                         label="Amount"
                     />
@@ -143,7 +143,7 @@ export default function TransferBoxes({
                             </Button>
                         }
                         title="Transfer To"
-                        selectItems={isFromPac ? data.companies : data.pactus}
+                        selectItems={isFromPac ? data.networks : data.pactus}
                         label={`Destination address in ${isFromPac ? " Polygon mainnet" : "Pactus mainnet"} network`}
                         placeholder={
                             !isFromPac

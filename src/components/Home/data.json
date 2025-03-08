@@ -4,8 +4,8 @@
         "icon": "/companies/pactus.svg",
         "value": "PAC"
     }],
-    "companies": [{
-            "value": "Polygon",
+    "networks": [{
+            "value": "amoy",
             "title": "Polygon",
             "chainId": 137,
             "icon": "/companies/polygon.svg"

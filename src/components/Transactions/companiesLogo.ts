@@ -16,4 +16,19 @@ export const companiesLogo = {
         explorer:networks["amoy"].explorer
 
     },
+    BSC_PACTUS: {
+        srcFrom: "/companies/binance-smart-chain.svg",
+        srcTo: "/companies/pactus.svg",
+        chainFrom: "Binance Smart Chain Network",
+        chainTo: "Pactus Network",
+        explorer:networks["bsc"].explorer
+    },
+    PACTUS_BSC: {
+        srcFrom: "/companies/pactus.svg",
+        srcTo: "/companies/binance-smart-chain.svg",
+        chainFrom: "Pactus Network",
+        chainTo: "Binance Smart Chain Network",
+        explorer:networks["amoy"].explorer
+
+    },
 };
