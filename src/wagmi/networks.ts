@@ -36,7 +36,7 @@ export const networks: Record<string, NetworkT> = {
   bsc: {
     name: "Binance Smart Chain",
     contractAddress: "0x10004a9A742ec135c686C9aCed00FA3C93D66866", 
-    explorer: "https://bscscan.com/token/0x10004a9A742ec135c686C9aCed00FA3C93D66866",
+    explorer: "https://bscscan.com/tx",
     rpcUrl: "https://bsc-dataseed.binance.org/",
     chainId: 56,
     symbol: "BNB",
