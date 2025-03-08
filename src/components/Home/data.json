@@ -5,7 +5,7 @@
         "value": "PAC"
     }],
     "companies": [{
-            "value": "amoy",
+            "value": "Polygon",
             "title": "Polygon",
             "chainId": 137,
             "icon": "/companies/polygon.svg"
