@@ -51,7 +51,7 @@ export const wPACOnLinks: NavigationLinksT[] = [
     {
         title: "On Binance Smart Chain",
         description: "Wpac token on explorer",
-        link: "https://bscscan.com/",
+        link: "https://bscscan.com/token/0x10004a9A742ec135c686C9aCed00FA3C93D66866",
         icon: <BinanceIcon />,
     },
 ];
