@@ -5,14 +5,17 @@
         "value": "PAC"
     }],
     "companies": [{
-            "value": "Polygon",
+            "value": "amoy",
             "title": "Polygon",
+            "chainId": 137,
             "icon": "/companies/polygon.svg"
         },
         {
-            "title": "Pactus",
-            "value": "PAC",
-            "icon": "/companies/pactus.svg"
+            "title": "Binance Smart Chain",
+            "value": "bsc",
+            "chainId": 56,
+            "icon": "/companies/binance-smart-chain.svg"
         }
+
     ]
 }

@@ -1,5 +1,5 @@
 import { getDefaultConfig } from '@rainbow-me/rainbowkit';
-import { polygon } from 'viem/chains';
+import { polygon , bsc} from 'viem/chains';
 
 
 export const config = getDefaultConfig({
@@ -7,6 +7,8 @@ export const config = getDefaultConfig({
   projectId: '412518712bdfdffa4c475e1d23133393',
   chains: [
     polygon,
+    bsc
+    // base
   ],
   ssr: false,
 });

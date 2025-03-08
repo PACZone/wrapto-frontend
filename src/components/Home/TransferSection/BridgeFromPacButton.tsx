@@ -25,6 +25,7 @@ export default function BridgeFromPacButton({
         transferTo,
         setTransferToError,
         setTransferFromError,
+        network
     } = useTransferBoxContext();
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -83,7 +84,7 @@ export default function BridgeFromPacButton({
                         onClick={() => {
                             if (polygonValidator(transferTo.toLocaleString())) {
                                 navigate(
-                                    `/transactionMemo?transferTo=${transferTo}&amount=${transferFrom}`,
+                                    `/transactionMemo?transferTo=${transferTo}&amount=${transferFrom}&network=${network}`,
                                 );
                             }
                         }}

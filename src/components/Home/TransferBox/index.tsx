@@ -9,11 +9,12 @@ import {
 import { TextField } from "components/shared/TextField";
 import { useTransferBoxContext } from "context/TransferBoxContext";
 import { HTMLInputTypeAttribute } from "react";
-
+import { useSwitchChain, useChainId } from "wagmi";
 type SelectItemsT = {
     title: string;
     icon: string;
     value: string;
+    chainId?: number;
 };
 type TransferBoxProps = {
     title: string;
@@ -44,6 +45,12 @@ export default function TransferBox({
     leading = false,
 }: TransferBoxProps) {
     const { setNetwork } = useTransferBoxContext();
+    const { switchChain } = useSwitchChain();
+    const chainId = useChainId();
+    const selectDefaultValue = selectItems.find(
+        chain => chain.chainId === chainId,
+    )?.value;
+    
     return (
         <div className=" py-sp7 rounded-xl bg-[#0C0E0ECC] bg-opacity-80 border-[1.5px] border-gray-700 transition-all ">
             <div className="flex items-center justify-between py-[6px] mb-sp5 md:px-sp7 px-sp2 ">
@@ -53,11 +60,22 @@ export default function TransferBox({
                 <div className="animate-fade  animate-delay-[150ms] ">
                     {selectItems.length > 1 ? (
                         <Select
-                            defaultValue={selectItems[0].value ?? "pac"}
-                            onValueChange={value =>
-                                setNetwork && setNetwork(value)
+                            defaultValue={
+                                selectDefaultValue ??
+                                selectItems[0].value ??
+                                "pac"
                             }
-                            disabled={selectItems.length < 3}
+                            onValueChange={value => {
+                                setNetwork && setNetwork(value);
+                                const selectedItem = selectItems.find(
+                                    item => item.value === value,
+                                );
+                                if (selectedItem && selectedItem.chainId) {
+                                    switchChain({
+                                        chainId: selectedItem.chainId,
+                                    });
+                                }
+                            }}
                         >
                             <SelectGroup>
                                 <SelectTrigger className="w-fit truncate">
