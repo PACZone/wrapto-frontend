@@ -19,7 +19,6 @@ export default function TransferSection() {
 
     const { isConnected } = useAccount();
     const account = useAccount();
-
     return (
         <form
             id="transfer-section"
