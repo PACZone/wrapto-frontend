@@ -12,7 +12,7 @@ type NetworkT= {
 
 export const networks: Record<string, NetworkT> = {
   amoy: {
-    name: "MATIC",
+    name: "Matic",
     contractAddress: "0x2f77E0afAEE06970Bf860B8267b5aFECFFF6F216",
     explorer: "https://polygonscan.com/tx",
     rpcUrl: "https://polygon-rpc.com",
@@ -35,7 +35,7 @@ export const networks: Record<string, NetworkT> = {
   // },
   bsc: {
     name: "Binance Smart Chain",
-    contractAddress: "0x2f77E0afAEE06970Bf860B8267b5aFECFFF6F216", 
+    contractAddress: "0x10004a9A742ec135c686C9aCed00FA3C93D66866", 
     explorer: "https://bscscan.com/",
     rpcUrl: "https://bsc-dataseed.binance.org/",
     chainId: 56,
