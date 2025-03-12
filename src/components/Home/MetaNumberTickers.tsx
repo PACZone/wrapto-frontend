@@ -2,6 +2,11 @@ import { getStats, StatsResponseT } from "api/services/Stats";
 import MetaNumberTicker from "./MetaNumberTicker";
 import { useEffect, useState } from "react";
 import Spinner from "components/shared/Spinner";
+const metaDataMap: Record<string, string> = {
+    total_successful_bridges: "Total Successful Bridges",
+    total_wpacs: "Total WPAC",
+    total_locked_pacs: "Total Locked PAC",
+};
 
 const MetaNumberTickers = () => {
     const [data, setData] = useState<StatsResponseT>();
@@ -21,6 +26,12 @@ const MetaNumberTickers = () => {
         fetch();
     }, []);
 
+    const metaData =
+        data &&
+        Object.entries(data).map(([key, value]) => ({
+            value,
+            label: metaDataMap[key] || key,
+        }));
     return (
         <section className="flex flex-col md:flex-row gap-sp4 justify-center pb-[200px] max-w-[1186px] mx-auto">
             {isLoading ? (
@@ -29,12 +40,8 @@ const MetaNumberTickers = () => {
                 </div>
             ) : (
                 data &&
-                Object.entries(data).map((key, index) => (
-                    <MetaNumberTicker
-                        key={key[0] + index}
-                        label={key[0].replaceAll("_", " ")}
-                        value={key[1]}
-                    />
+                metaData?.map((meta, index) => (
+                    <MetaNumberTicker key={meta.value + index} {...meta} />
                 ))
             )}
         </section>
