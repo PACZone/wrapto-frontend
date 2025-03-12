@@ -9,7 +9,9 @@ const MetaNumberTicker = ({ value, label }: MetaNumberTickerProps) => {
             <div className="lg:heading-2 heading-4 text-secondary">
                 <NumberTicker value={value} />
             </div>
-            <p className="text-center text-primary lg:title-1 title-2 animate-fade-up animate-delay-150">{label}</p>
+            <p className="text-center text-primary lg:title-1 title-2 animate-fade-up animate-delay-150 capitalize">
+                {label}
+            </p>
         </div>
     );
 };
