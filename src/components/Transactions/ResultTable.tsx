@@ -50,6 +50,7 @@ export default function ResultTable({ data }: ResultTableProps) {
                                         "hh:mm a",
                                     );
                                     const bridgeType = item.bridge_type;
+                                    if (!bridgeType) return;
                                     const {
                                         srcFrom,
                                         srcTo,

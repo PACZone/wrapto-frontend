@@ -17,7 +17,7 @@
             "icon": "/companies/binance-smart-chain.svg"
         },
         {
-            "title": "base Blockchain",
+            "title": "Base Blockchain",
             "value": "base",
             "chainId": 8453,
             "icon": "/companies/baseBlockchain.svg"

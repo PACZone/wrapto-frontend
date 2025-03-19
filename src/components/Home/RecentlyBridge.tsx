@@ -40,6 +40,7 @@ export default function RecentlyBridge() {
                 <div className="flex flex-col border border-gray-700 rounded-md max-w-[884px]  mx-auto  divide-y divide-gray-700 bg-[#0C0E0ECC] overflow-x-auto">
                     {data.slice(0, 10).map((item, key) => {
                         const bridgeType = item.bridge_type;
+                        if (!bridgeType) return;
                         const { srcFrom, srcTo, chainFrom, chainTo, explorer } =
                             companiesLogo[bridgeType];
                         return (
