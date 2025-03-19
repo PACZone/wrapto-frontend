@@ -3,6 +3,7 @@ import {
     GithubIcon,
     BinanceIcon,
     PolygonIcon,
+    BaseNetworkIcon,
 } from "assets/icons";
 
 export type LinkT = {
@@ -53,6 +54,12 @@ export const wPACOnLinks: NavigationLinksT[] = [
         description: "Wpac token on explorer",
         link: "https://bscscan.com/token/0x10004a9A742ec135c686C9aCed00FA3C93D66866",
         icon: <BinanceIcon />,
+    },
+    {
+        title: "On Base",
+        description: "Wpac token on explorer",
+        link: "https://basescan.org/token/0x10004a9A742ec135c686C9aCed00FA3C93D66866",
+        icon: <BaseNetworkIcon />,
     },
 ];
 

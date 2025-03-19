@@ -8,7 +8,7 @@ import {
 } from "components/shared/Select";
 import { TextField } from "components/shared/TextField";
 import { useTransferBoxContext } from "context/TransferBoxContext";
-import { HTMLInputTypeAttribute } from "react";
+import { HTMLInputTypeAttribute, useEffect } from "react";
 import { useSwitchChain, useChainId } from "wagmi";
 type SelectItemsT = {
     title: string;
@@ -50,7 +50,9 @@ export default function TransferBox({
     const selectDefaultValue = selectItems.find(
         chain => chain.chainId === chainId,
     )?.value;
-    
+    useEffect(() => { 
+        if (selectDefaultValue) setNetwork(selectDefaultValue);
+    }, []);
     return (
         <div className=" py-sp7 rounded-xl bg-[#0C0E0ECC] bg-opacity-80 border-[1.5px] border-gray-700 transition-all ">
             <div className="flex items-center justify-between py-[6px] mb-sp5 md:px-sp7 px-sp2 ">
@@ -66,7 +68,7 @@ export default function TransferBox({
                                 "pac"
                             }
                             onValueChange={value => {
-                                setNetwork && setNetwork(value);
+                                setNetwork(value);
                                 const selectedItem = selectItems.find(
                                     item => item.value === value,
                                 );

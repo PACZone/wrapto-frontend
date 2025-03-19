@@ -8,4 +8,6 @@ export enum BridgeType {
     POLYGON_PACTUS = "POLYGON_PACTUS",
     BSC_PACTUS = "BSC_PACTUS",
     PACTUS_BSC = "PACTUS_BSC",
+    BASE_PACTUS = "BASE_PACTUS",
+    PACTUS_BASE = "PACTUS_BASE",
 }
