@@ -7,7 +7,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 
 const PACTUS_WALLET = "pc1zqyxjatqfhaj3arc727alwl4sa3z8lv2m730eh2";
 
-const networksName = { amoy: "POLYGON", bsc: "BSC" } as const;
+const networksName = { amoy: "POLYGON", bsc: "BSC",base:"BASE" } as const;
 type NetworksNameT = typeof networksName;
 
 export default function TransactionMemo() {
