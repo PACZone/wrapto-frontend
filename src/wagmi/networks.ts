@@ -25,14 +25,14 @@ export const networks: Record<string, NetworkT> = {
     explorer: "https://pacviewer.com/transaction",
     symbol: "PAC",
   },
-  // base: {
-  //   name: "Base",
-  //   contractAddress: "0xYourContractAddressHere",
-  //   explorer: "https://basescan.org/tx",
-  //   rpcUrl: "https://mainnet.base.org",
-  //   chainId: 8453,
-  //   symbol: "ETH",
-  // },
+  base: {
+    name: "Base",
+    contractAddress: "0x10004a9A742ec135c686C9aCed00FA3C93D66866",
+    explorer: "https://basescan.org/tx",
+    rpcUrl: "https://mainnet.base.org",
+    chainId: 8453,
+    symbol: "ETH",
+  },
   bsc: {
     name: "Binance Smart Chain",
     contractAddress: "0x10004a9A742ec135c686C9aCed00FA3C93D66866", 

@@ -30,4 +30,20 @@ export const companiesLogo = {
         chainTo: "Binance Smart Chain Network",
         explorer:networks["bsc"].explorer
     },
+
+    
+    BASE_PACTUS: {
+        srcFrom: "/companies/baseBlockchain.svg",
+        srcTo: "/companies/pactus.svg",
+        chainFrom: "Base Network",
+        chainTo: "Pactus Network",
+        explorer:networks["pac"].explorer
+    },
+    PACTUS_BASE: {
+        srcFrom: "/companies/pactus.svg",
+        srcTo: "/companies/baseBlockchain.svg",
+        chainFrom: "Pactus Network",
+        chainTo: "Base Network",
+        explorer:networks["base"].explorer
+    },
 };
